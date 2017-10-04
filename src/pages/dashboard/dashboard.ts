@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams, MenuController } from 'ionic-angular';
+
+//pages 
+import { LoginPage } from '../login/login';
 
 @Component({
   selector: 'page-dashboard',
@@ -7,8 +10,11 @@ import { NavController } from 'ionic-angular';
 })
 export class DashboardPage {
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public menuCtrl: MenuController) {
+    
+  }//constructor
 
-  }
+}//export class
 
-}
+
+  
