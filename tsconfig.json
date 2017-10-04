@@ -11,7 +11,9 @@
     "module": "es2015",
     "moduleResolution": "node",
     "sourceMap": true,
-    "target": "es5"
+    "baseUrl": "src",
+    "target": "es5",
+    "allowJs": true
   },
   "include": [
     "src/**/*.ts"

@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<!--[if lte IE 9]><html class="no-js is-ie"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html class=no-js>
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="UBER Manpower">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>UBER Manpower</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="assets/css/fakeLoader.css">
+    <link rel=stylesheet href="assets/css/main.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="assets/js/fakeloader.min.js"></script>
+    <script src="assets/js/vendor/modernizr.js"></script>
+    <script src="assets/js/vendor/respond.min.js"></script>
+    <script src="https://use.fontawesome.com/98304e9015.js"></script>
+</head>
+
+<body>
+    <div id="fakeLoader"></div>
+    <script type="text/javascript">
+        $("#fakeLoader").fakeLoader({
+            timeToHide: 1200,
+            bgColor: "#fdb614",
+            spinner: "spinner1",
+            zIndex: "999"
+        });
+    </script>
+    <!-- Left Side Menu -->
+    <nav id="navbar-main">
+        <header>
+            <p class="text-center">
+                <br><img class="svg" src="assets/img/logo3.png" alt="UBER MANPOWER" width="124" height="124">
+            </p>
+        </header>
+        <ul class="nav nav-pills nav-stacked">
+            <li class="active"><a href="#">Dashboard</a></li>
+            <!--     </ul>
+        <h4>Other links</h4> -->
+            <ul class="nav nav-pills nav-stacked">
+                <li><a href="job-map.html">Matching Jobs</a></li>
+                <li><a href="job-history.html">Job History</a></li>
+                <li><a href="work-logs.html">Work Logs</a></li>
+                <li><a href="login.html">Logout</a></li>
+            </ul>
+    </nav>
+    <main id="main" class="map-view full-screen">
+        <div class="outer-menu">
+            <!-- <input class="checkbox-toggle" type="checkbox" />
+          <div class="hamburger">
+            <div></div>
+          </div> -->
+            <div class="menu">
+                <div>
+                    <div>
+                        <ul>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Products</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="nav-container">
+            <div class="top-nav-logo-container">
+                <a href="dashboard.html"><div class="top-nav-logo">
+                    <img src="assets/img/logo3.png">
+                </div></a>
+            </div>
+            <div class="nav-left">
+                <div class="side-menu-toggle-wrap">
+                    <div class="sidebar-menu-toggle">
+                        <input class="checkbox-toggle toggle-button" type="checkbox" />
+                        <div class="hamburger">
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-right">
+                <div class="notifications-btn-wrap">
+                    <button type="button" class="nav-btn notifications-btn" data-toggle="modal" data-target="#notifications_modal">
+                        <span class="notifications-text">U</span>
+                        <span class="notifications-count">1</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="sub-nav-container transparent text-center">
+            <div class="sub-nav">
+                <div class="row">
+                    <div class="nav-left third-width text-left">
+                        <a href="job-map.html">
+                            <div class="left-arrow-container">
+                                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                            </div>
+                            Matching Jobs
+                        </a>
+                    </div>
+                    <div class="nav-center third-width text-center">
+                        My Jobs
+                    </div>
+                    <div class="nav-right third-width">
+                        <a href="matching-jobs.html">
+                            Job List
+                            <div class="right-arrow-container">
+                                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                            </div>
+                        </a>                    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="map"></div>
+        <script>
+        function initMap() {
+            directionsService = new google.maps.DirectionsService;
+            directionsDisplay = new google.maps.DirectionsRenderer;
+
+            var currentMark;
+            var user_location = { lat: 40.747257, lng: -73.929749 };
+            map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 10,
+                center: user_location
+            });
+            directionsDisplay.setMap(map);
+
+            var onChangeHandler = function() {
+                calculateAndDisplayRoute(directionsService, directionsDisplay);
+            };
+
+            // Create user location marker 
+            var user_marker = new google.maps.Marker({
+                map: map,
+                position: user_location,
+                title: 'Some location'
+            });
+
+            // Create an array of alphabetical characters used to label the markers.
+            var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+            var contentString = '<div id="custom_pin_label">'+
+                '<div id="bodyContent">'+
+                '<div class="job-item-heading-container">'+
+                    '<h3 class="job-item-heading">Accounting Manager</h3>'+
+                '</div>'+
+                '<div class="job-description-section job-start-date"><h3 class="job-details-sub-heading">Start Date</h3><p class="job-item-description">20.09.2017</p></div><div class="job-description-section job-end-date"><h3 class="job-details-sub-heading">End Date</h3><p class="job-item-description">20.11.2017</p></div><div class="job-description-section job-description"><h3 class="job-details-sub-heading">Description</h3><p class="job-item-description">We are looking for a responsible Budget Manager to develop our company’s budget and oversee its implementation...</p></div><p><div class="col-xs-4 no-padding has-sub-text"><a href="#" id="start_job_infowindow" onclick="startJob(&quot;Accounting Manager&quot;); $(this).hide(); $(&quot;#stop_job_infowindow&quot;).show();" id="create" name="create" class="btn btn-primary toolbar-btn accept-job"><i class="fa fa-play-circle-o" aria-hidden="true"></i><div class="sub-text-container"><div class="sub-text">Start Job</div></div></a><a href="#" style="display: none;" id="stop_job_infowindow" onclick="stopJob(); $(this).hide(); $(&quot;#start_job_infowindow&quot;).show();" id="create" name="create" class="btn btn-primary toolbar-btn accept-job"><i class="fa fa-stop-circle-o" aria-hidden="true"></i><div class="sub-text-container"><div class="sub-text">Stop Job</div></div></a></div><div class="col-xs-4 no-padding has-sub-text"><a href="#" onclick="calculateAndDisplayRoute(directionsDisplay, directionsService);" id="create" name="create" class="btn btn-primary toolbar-btn job-navigate"><i class="fa fa-map-marker" aria-hidden="true"></i><div class="sub-text-container"><div class="sub-text">Navigate</div></div></a></div><div class="col-xs-4 no-padding has-sub-text"><a href="#" onclick="$(&quot;#job_details_modal&quot;).modal(&quot;show&quot;);" id="create" name="create" class="btn btn-primary toolbar-btn job-details"><i class="fa fa-briefcase" aria-hidden="true"></i><div class="sub-text-container"><div class="sub-text">Job Details</div></div></a></div></p>'+
+                '</div>'+
+                '</div>';
+
+            var infowindow = new google.maps.InfoWindow({
+                content: contentString
+            });
+
+            // Add some markers to the map.
+            // Note: The code uses the JavaScript Array.prototype.map() method to
+            // create an array of markers based on a given "locations" array.
+            // The map() method here has nothing to do with the Google Maps API.
+            var markers = locations.map(function(location, i) {
+                var marker = new google.maps.Marker({
+                    position: location,
+                    label: labels[i % labels.length]
+                });
+                marker.addListener('click', function() {
+                    map.setZoom(12);
+                    infowindow.open(map, marker);
+                    currentMark = this;
+                    // map.panTo(marker.getPosition());
+                    // $('.selected-job-container').addClass('expanded');
+                });
+                infowindow.addListener('closeclick',function(){
+                    map.setZoom(10);
+                });
+                return marker;
+            });
+
+            $('.job-navigate').on('click', function(){
+                calculateAndDisplayRoute(directionsDisplay, directionsService);
+            });
+
+            // Add a marker clusterer to manage the markers.
+            var markerCluster = new MarkerClusterer(map, markers, { imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m' });
+        }
+
+        function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+            // directionsService.route({
+            //   origin: { lat: 40.747257, lng: -73.929749 },
+            //   destination: { lat: 40.741895, lng: -73.989308 },
+            //   travelMode: 'DRIVING'
+            // }, function(response, status) {
+            //   if (status === 'OK') {
+            //     directionsDisplay.setDirections(response);
+            //   } else {
+            //     window.alert('Directions request failed due to ' + status);
+            //   }
+            // });
+        }
+
+        var locations = [
+            { lat: 40.741895, lng: -73.989308 },
+            { lat: 40.776382, lng: -73.589172 }
+        ]
+        </script>
+        <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+        </script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmoo3rdwaROakB18pFWw_Mx7UgmbqT4aw&callback=initMap">
+        </script>
+        
+        <!-- <div class="container page-container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h2 class="mb-12 heading page-heading">Matching Jobs</h2>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <div class="footer text-center">
+            <p class="fmenu">
+                <!-- <a href="index.html">HOME</a> | <a href="about.html">ABOUT</a> -->
+            </p>
+        </div>
+        <div class="selected-job-container">
+            <!-- Selected Job Container -->
+            <div class="job-selection-container">
+                <div class="close-selected-job">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+                <div class="job-details-short">
+                    <div class="job-item-heading-container">
+                        <h3 class="job-item-heading text-center">Accounting Manager</h3>
+                    </div>
+                    <div class="job-description-section job-start-date">
+                        <h3 class="job-details-sub-heading">
+                            Start Date
+                        </h3>
+                        <p class="job-item-description">
+                            20.09.2017
+                        </p>
+                    </div>
+                    <div class="job-description-section job-end-date">
+                        <h3 class="job-details-sub-heading">
+                            End Date
+                        </h3>
+                        <p class="job-item-description">
+                            20.11.2017
+                        </p>
+                    </div>
+                    <div class="job-description-section job-rate">
+                        <h3 class="job-details-sub-heading">
+                            Rate of Pay
+                        </h3>
+                        <p class="job-item-description">
+                            Avarage salary
+                        </p>
+                    </div>
+                    <div class="job-description-section job-location-address">
+                        <h3 class="job-details-sub-heading">
+                            Job Location
+                        </h3>
+                        <p class="job-item-description">
+                            44 Shirley Ave. West Chicago, IL 60185
+                        </p>
+                    </div>
+                    <div class="job-description-section job-description">
+                        <h3 class="job-details-sub-heading">
+                            Description
+                        </h3>
+                        <p class="job-item-description">
+                            We are looking for a responsible Budget Manager to develop our company’s budget and oversee its implementation. You will also review budget proposals and prepare financial documents and reports...
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="job-toolbar-container">
+                <div class="row">
+                    <div class="col-xs-3 no-padding has-sub-text">
+                        <a href="job-details.html" id="create" name="create" class="btn btn-primary toolbar-btn accept-job">
+                            <div class="sub-text-container">
+                                <div class="sub-text">
+                                    Start Job
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-xs-3 no-padding has-sub-text">
+                        <a href="job-map.html" id="create" name="create" class="btn btn-primary toolbar-btn reject-job">
+                            <div class="sub-text-container">
+                                <div class="sub-text">
+                                    Stop Job
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-xs-3 no-padding has-sub-text">
+                        <a href="job-map.html" id="create" name="create" class="btn btn-primary toolbar-btn job-navigate">
+                            <div class="sub-text-container">
+                                <div class="sub-text">
+                                    Navigate
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-xs-3 no-padding has-sub-text">
+                        <a href="job-map.html" id="create" name="create" class="btn btn-primary toolbar-btn job-details">
+                            <div class="sub-text-container">
+                                <div class="sub-text">
+                                    Job Details
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bottom Toolbar -->
+        <div class="bottom-toolbar-container">
+            <div class="nav-left">
+                <div class="dashboard-btn-wrap">
+                    <a href="work-logs.html" class="dashboard-btn">
+                        <i class="fa fa-clock-o" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <div class="toolbar-active-job-heading">
+                    <a id="active_job_title" href="job-details.html">
+                        System Architect
+                    </a>
+                </div>
+                <div class="toolbar-logs">
+                    Time: <span class="toolbar-job-time">00:00:00</span> | Miles: <span class="toolbar-job-miles">0</span>
+                </div>
+            </div>
+            <div class="nav-right">
+                <div class="stop-job-icon-wrap stop-job">
+                    <i class="fa fa-stop-circle-o" aria-hidden="true"></i>
+                </div>
+                <div class="pause-job-icon-wrap pause-job">
+                    <i class="fa fa-pause-circle-o" aria-hidden="true"></i>
+                </div>
+                <div class="start-job-icon-wrap start-job">
+                    <i class="fa fa-play-circle-o" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Modal -->
+    <div class="modal fade" id="notifications_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="mb-12 heading page-heading">You Have a Job Offer!</h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="notification-modal-link-wrap">
+                        <div class="job-details-short">
+                            <div class="job-description-section job-start-date">
+                                <h3 class="job-details-sub-heading">
+                                Start Date
+                            </h3>
+                                <p class="job-item-description">
+                                    20.09.2017
+                                </p>
+                            </div>
+                            <div class="job-description-section job-end-date">
+                                <h3 class="job-details-sub-heading">
+                                End Date
+                            </h3>
+                                <p class="job-item-description">
+                                    20.11.2017
+                                </p>
+                            </div>
+                            <div class="job-description-section job-rate">
+                                <h3 class="job-details-sub-heading">
+                                Rate of Pay
+                            </h3>
+                                <p class="job-item-description">
+                                    Avarage salary
+                                </p>
+                            </div>
+                            <div class="job-description-section job-location-address">
+                                <h3 class="job-details-sub-heading">
+                                Job Location
+                            </h3>
+                                <p class="job-item-description">
+                                    44 Shirley Ave. West Chicago, IL 60185
+                                </p>
+                            </div>
+                            <div class="job-description-section job-description">
+                                <h3 class="job-details-sub-heading">
+                                Description
+                            </h3>
+                                <p class="job-item-description">
+                                    We are looking for a responsible Budget Manager to develop our company’s budget and oversee its implementation. You will also review budget proposals and prepare financial documents and reports...
+                                </p>
+                            </div>
+                        </div>
+                        <a class="notification-modal-link text-center see-details" href="#">Click to See Details</a>
+                        <div class="modal-job-details">
+                            <div class="job-item-heading-container">
+                                <h3 class="job-item-heading text-center">Accounting Manager</h3>
+                            </div>
+                            <div class="job-item-description-container">
+                                <div class="job-description-section job-start-date">
+                                    <h3 class="job-details-sub-heading">
+                                    Start Date
+                                </h3>
+                                    <p class="job-item-description">
+                                        20.09.2017
+                                    </p>
+                                </div>
+                                <div class="job-description-section job-end-date">
+                                    <h3 class="job-details-sub-heading">
+                                    End Date
+                                </h3>
+                                    <p class="job-item-description">
+                                        20.11.2017
+                                    </p>
+                                </div>
+                                <div class="job-description-section job-rate">
+                                    <h3 class="job-details-sub-heading">
+                                    Rate of Pay
+                                </h3>
+                                    <p class="job-item-description">
+                                        Avarage salary
+                                    </p>
+                                </div>
+                                <div class="job-description-section job-requirements">
+                                    <h3 class="job-details-sub-heading">
+                                    What You Need to Bring
+                                </h3>
+                                    <p class="job-item-description">
+                                        Laptop
+                                    </p>
+                                </div>
+                                <div class="job-description-section job-location-address">
+                                    <h3 class="job-details-sub-heading">
+                                    Job Location
+                                </h3>
+                                    <p class="job-item-description">
+                                        44 Shirley Ave. West Chicago, IL 60185
+                                    </p>
+                                </div>
+                                <div class="job-description-section job-description">
+                                    <h3 class="job-details-sub-heading">
+                                    Description
+                                </h3>
+                                    <p class="job-item-description">
+                                        We are looking for a responsible Budget Manager to develop our company’s budget and oversee its implementation. You will also review budget proposals and prepare financial documents and reports. Our ideal candidate holds a degree in Accounting or Finance and is familiar with legal regulations of accounting and budgeting. You should combine excellent numeracy skills with the ability to analyze and present complex data. To be successful in this role, you should be able to use critical thinking to create financial forecasts and make budgeting decisions. Ultimately, you should plan, evaluate, design and implement our company’s budget, ensuring business growth and compliance with the law.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="col-xs-4 no-padding">
+                        <a href="job-details.html" id="create" name="create" class="btn btn-primary toolbar-btn accept-job"><i class="fa fa-check" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="col-xs-4 no-padding">
+                        <a href="job-map.html" id="create" name="create" class="btn btn-primary toolbar-btn reject-job"><i class="fa fa-times" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="col-xs-4 no-padding">
+                        <a href="#" id="create" name="create" class="btn btn-primary toolbar-btn favorite-job"><i class="fa fa-star" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="job_details_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="mb-12 heading page-heading">Accounting Manager</h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="notification-modal-link-wrap">
+                        <div class="job-details-short">
+                            <div class="job-description-section job-start-date">
+                                <h3 class="job-details-sub-heading">
+                                Start Date
+                            </h3>
+                                <p class="job-item-description">
+                                    20.09.2017
+                                </p>
+                            </div>
+                            <div class="job-description-section job-end-date">
+                                <h3 class="job-details-sub-heading">
+                                End Date
+                            </h3>
+                                <p class="job-item-description">
+                                    20.11.2017
+                                </p>
+                            </div>
+                            <div class="job-description-section job-rate">
+                                <h3 class="job-details-sub-heading">
+                                Rate of Pay
+                            </h3>
+                                <p class="job-item-description">
+                                    Avarage salary
+                                </p>
+                            </div>
+                            <div class="job-description-section job-location-address">
+                                <h3 class="job-details-sub-heading">
+                                Job Location
+                            </h3>
+                                <p class="job-item-description">
+                                    44 Shirley Ave. West Chicago, IL 60185
+                                </p>
+                            </div>
+                            <div class="job-description-section job-description">
+                                <h3 class="job-details-sub-heading">
+                                Description
+                            </h3>
+                                <p class="job-item-description">
+                                    We are looking for a responsible Budget Manager to develop our company’s budget and oversee its implementation. You will also review budget proposals and prepare financial documents and reports...
+                                </p>
+                            </div>
+                        </div>
+                        <a class="notification-modal-link text-center see-details" href="#">Click to See Details</a>
+                        <div class="modal-job-details">
+                            <div class="job-item-description-container">
+                                <div class="job-description-section job-start-date">
+                                    <h3 class="job-details-sub-heading">
+                                    Start Date
+                                </h3>
+                                    <p class="job-item-description">
+                                        20.09.2017
+                                    </p>
+                                </div>
+                                <div class="job-description-section job-end-date">
+                                    <h3 class="job-details-sub-heading">
+                                    End Date
+                                </h3>
+                                    <p class="job-item-description">
+                                        20.11.2017
+                                    </p>
+                                </div>
+                                <div class="job-description-section job-rate">
+                                    <h3 class="job-details-sub-heading">
+                                    Rate of Pay
+                                </h3>
+                                    <p class="job-item-description">
+                                        Avarage salary
+                                    </p>
+                                </div>
+                                <div class="job-description-section job-requirements">
+                                    <h3 class="job-details-sub-heading">
+                                    What You Need to Bring
+                                </h3>
+                                    <p class="job-item-description">
+                                        Laptop
+                                    </p>
+                                </div>
+                                <div class="job-description-section job-location-address">
+                                    <h3 class="job-details-sub-heading">
+                                    Job Location
+                                </h3>
+                                    <p class="job-item-description">
+                                        44 Shirley Ave. West Chicago, IL 60185
+                                    </p>
+                                </div>
+                                <div class="job-description-section job-description">
+                                    <h3 class="job-details-sub-heading">
+                                    Description
+                                </h3>
+                                    <p class="job-item-description">
+                                        We are looking for a responsible Budget Manager to develop our company’s budget and oversee its implementation. You will also review budget proposals and prepare financial documents and reports. Our ideal candidate holds a degree in Accounting or Finance and is familiar with legal regulations of accounting and budgeting. You should combine excellent numeracy skills with the ability to analyze and present complex data. To be successful in this role, you should be able to use critical thinking to create financial forecasts and make budgeting decisions. Ultimately, you should plan, evaluate, design and implement our company’s budget, ensuring business growth and compliance with the law.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="modal-footer">
+                    <div class="col-xs-4 no-padding">
+                        <a href="job-details.html" id="create" name="create" class="btn btn-primary toolbar-btn accept-job"><i class="fa fa-check" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="col-xs-4 no-padding">
+                        <a href="job-map.html" id="create" name="create" class="btn btn-primary toolbar-btn reject-job"><i class="fa fa-times" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="col-xs-4 no-padding">
+                        <a href="job-map.html" id="create" name="create" class="btn btn-primary toolbar-btn favorite-job"><i class="fa fa-star" aria-hidden="true"></i></a>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/dropdown.js"></script>
+    <script src="assets/js/slideout.min.js"></script>
+    <script>
+    // Config Options
+    var slideout = new Slideout({
+        'panel': document.getElementById('main'),
+        'menu': document.getElementById('navbar-main'),
+        'padding': 256,
+        'touch': false,
+        'tolerance': 70
+    });
+
+    // Toggle button
+    document.querySelector('.toggle-button').addEventListener('click', function() {
+        slideout.toggle();
+        $(this).toggleClass('menu-open');
+    });
+
+    function startJob(title) {
+        $('.pause-job').show();
+        $('#active_job_title').html(title);
+
+        timer = new Timer();
+        timer.start();
+        timer.addEventListener('secondsUpdated', function (e) {
+            $('.toolbar-job-time').html(timer.getTimeValues().toString());
+        });
+    }
+
+    function stopJob() {
+        $('.pause-job').hide();
+        $('.start-job').show();
+
+        timer.stop();
+    }
+
+    // Toggle job details modal
+    // document.querySelector('.job-details').addEventListener('click', function() {
+    //     $('#job_details_modal').modal('show');
+    // });
+
+    // Close selected job
+    // document.querySelector('.close-selected-job').addEventListener('click', function() {
+    //     $('.selected-job-container').removeClass('expanded');
+    //     map.setZoom(8);
+    // });
+    // document.querySelector('.reject-job').addEventListener('click', function() {
+    //     $('.selected-job-container').removeClass('expanded');
+    //     map.setZoom(8);
+    // });
+    </script>
+    <!--         <script src="assets/js/modal.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="assets/js/easytimer.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <!-- //-end- concat_js -->
+</body>
+
+</html>
