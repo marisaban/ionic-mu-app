@@ -1,0 +1,21 @@
+ion-content {
+    h1 {
+        text-align: center;
+    }
+    .job-header.col {
+        padding: 0 50px;
+        text-align: left;
+    }
+    .job-title.col, .job-location.col {
+        padding-left: 40px;
+    }
+    .job-title.col, .job-location.col {
+        border-bottom: 1px solid #ddd;
+    }
+    .job-title.col {
+        background: #f1f1f1;
+    }
+    .job-location.col {
+        background: #f9f9f9;
+    }
+}

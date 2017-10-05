@@ -39,12 +39,15 @@ $colors: (
   danger:     #f53d3d,
   light:      #f4f4f4,
   dark:       #222
-);
+  );
 
 
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
+$list-background-color: #fff;
+$list-ios-activated-background-color: #3aff74;
+$list-md-activated-background-color: #3aff74;
 
 
 

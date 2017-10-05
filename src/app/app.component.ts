@@ -8,6 +8,7 @@ import { LoginPage } from '../pages/login/login';
 import { DashboardPage } from '../pages/dashboard/dashboard';
 import { MatchingPage } from '../pages/matching-jobs/matching-jobs';
 import { HistoryPage } from '../pages/job-history/job-history';
+import { WorkPage } from '../pages/work-logs/work-logs';
 
 
 @Component({
@@ -29,7 +30,8 @@ export class MyApp {
       { title: 'Dashboard', component: DashboardPage },
       { title: 'Matching Jobs', component: MatchingPage},
       { title: 'Job History', component: HistoryPage},
-      { title: 'Login', component: LoginPage}
+      { title: 'Work Logs', component: WorkPage},
+      { title: 'Logout', component: LoginPage}
     ];
 
   }
