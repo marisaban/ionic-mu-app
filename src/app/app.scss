@@ -47,7 +47,15 @@ ion-header {
     .toolbar-title-md {
         color: #fff;
     }
-    .ion-md-menu:before {
-        color: #fff;
+}
+// ion-header toolbar header color for the pages
+.main-header {
+    .toolbar-background.toolbar-background-md {
+        background: #cccccc;
     }
+}
+// google map styling 
+#map {
+    height: 100%;
+    width: 100%;
 }

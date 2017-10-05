@@ -1,0 +1,12 @@
+ion-navbar {
+    button {
+        &.myModal {
+            float: right;
+            width: 100px;
+            margin: 8px 15px;
+            span.button-inner {
+                font-size: 12px;
+            }
+        }
+    }
+}

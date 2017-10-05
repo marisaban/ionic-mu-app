@@ -9,6 +9,7 @@ import { DashboardPage } from '../pages/dashboard/dashboard';
 import { MatchingPage } from '../pages/matching-jobs/matching-jobs';
 import { HistoryPage } from '../pages/job-history/job-history';
 import { WorkPage } from '../pages/work-logs/work-logs';
+import { ModalPage } from '../pages/modal/modal';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -22,7 +23,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     DashboardPage,
     MatchingPage,
     HistoryPage,
-    WorkPage
+    WorkPage,
+    ModalPage
   ],
   imports: [
     BrowserModule,
@@ -36,7 +38,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     DashboardPage,
     MatchingPage,
     HistoryPage,
-    WorkPage
+    WorkPage,
+    ModalPage
   ],
   providers: [
     StatusBar,
