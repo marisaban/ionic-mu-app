@@ -25,7 +25,7 @@ export class MatchingPage {
 
   initMap(){
 
-    let latLng = new google.maps.LatLng(40.795430, -73.961241);
+    let latLng = new google.maps.LatLng(37.7824796,-122.4099918);
 
     let mapOptions = {
       center: latLng,
@@ -34,6 +34,38 @@ export class MatchingPage {
     };
 
     this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+
+    const contentString = `
+    <div id="content">
+      <h4>Accounting Manager </h4>
+      <h4>Start Date</h4>
+      <p>20.09.2017</p>
+
+      <h4>End Date</h4>
+      <p>20.11.2017</p>
+
+      <h4>Description</h4>
+      <p>We are looking for a responsible Budget Manager to
+      developer our company's budget and oversee its implementation...
+      </p>
+    </div>
+    `;
+
+    let infowindow = new google.maps.InfoWindow({
+      content: contentString
+    });
+
+    let marker = new google.maps.Marker({
+      position: latLng,
+      map: this.map,
+      title: 'Hello World!'
+    });
+
+    // marker.setMap(this.map);
+
+    marker.addListener('click', () => {
+      infowindow.open(this.map, marker);
+    });
 
   }
 
