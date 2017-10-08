@@ -19,7 +19,7 @@ export class DashboardPage {
 
   constructor(private modalCtrl: ModalController) {
 
-  }//constructor
+  }
 
   ionViewDidLoad(){
     this.initMap();
@@ -72,9 +72,6 @@ export class DashboardPage {
 
   openModal(){
 
-    const myData = {
-      
-    }
     let myModal = this.modalCtrl.create(ModalPage);
     myModal.present();
   }

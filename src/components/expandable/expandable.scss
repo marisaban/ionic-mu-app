@@ -1,0 +1,11 @@
+expandable {
+    .expandWrapper {
+        height: 0;
+        display: none;
+    }
+
+    .expanded {
+        height: 200px;
+        display: block;
+    }
+}

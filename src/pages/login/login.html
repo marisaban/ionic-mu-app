@@ -10,7 +10,8 @@
                         <ion-item>
                                 <ion-input placeholder="Password"></ion-input>
                         </ion-item>
-                        <button [navPush]="homePage" ion-button class="sign-in" >Sign In</button>
+                        <!-- <button [navPush]="homePage" ion-button class="sign-in" >Sign In</button> -->
+                        <button ion-button class="sign-in" (click)="launchPage();">Sign In</button>
                         <button ion-button class="facebook">Sign In with Facebook</button>
                     </ion-list>
             </ion-col>

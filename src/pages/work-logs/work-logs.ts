@@ -10,6 +10,8 @@ import { ModalPage } from '../modal/modal';
 })
 export class WorkPage {
 
+  items: any = new Array(8);
+
   constructor(private modalCtrl: ModalController) {
     
   }

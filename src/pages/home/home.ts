@@ -10,7 +10,7 @@ import { DashboardPage } from '../dashboard/dashboard';
 export class HomePage {
 
   constructor(public navCtrl: NavController) {
-    this.navCtrl.setRoot(DashboardPage);
+    // this.navCtrl.setRoot(DashboardPage);
   }
 
 }

@@ -11,6 +11,9 @@ import { HistoryPage } from '../pages/job-history/job-history';
 import { WorkPage } from '../pages/work-logs/work-logs';
 import { ModalPage } from '../pages/modal/modal';
 
+//custom component
+import { SubNavComponent } from '../components/sub-nav/sub-nav';
+import { ExpandableComponent } from '../components/expandable/expandable';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -24,7 +27,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MatchingPage,
     HistoryPage,
     WorkPage,
-    ModalPage
+    ModalPage,
+    SubNavComponent,
+    ExpandableComponent
   ],
   imports: [
     BrowserModule,
