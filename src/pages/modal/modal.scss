@@ -3,7 +3,7 @@ page-modal {
         button {
             &.myModal {
                 float: right;
-                width: 100px;
+                
                 margin: 8px 15px;
                 span.button-inner {
                     font-size: 12px;
@@ -11,5 +11,23 @@ page-modal {
             }
         }
     }
-    
+}
+
+ion-grid {
+    &.modal-bg {
+        &.grid {
+            background: #fff;
+            padding: 25px;
+            border-radius: 5%;
+        }
+    }
+}
+
+ion-content {
+    &.modal-page {
+        &.content-md {
+            color: #000;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+    }
 }
