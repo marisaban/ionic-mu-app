@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { ModalController } from 'ionic-angular';
 
-import { HomePage } from '../home/home';
 import { DashboardPage } from '../dashboard/dashboard';
 import { ModalPage } from '../modal/modal';
 
@@ -12,7 +11,6 @@ import { ModalPage } from '../modal/modal';
 })
 export class HistoryPage {
   dashboardPage = DashboardPage;
-  homePage      = HomePage;
 
   jobs: any = [];
   items: any = [];

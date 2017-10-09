@@ -1,7 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { ModalController } from 'ionic-angular';
 
-import { HomePage } from '../home/home';
 import { DashboardPage } from '../dashboard/dashboard';
 import { ModalPage } from '../modal/modal';
 
@@ -11,7 +10,6 @@ import { ModalPage } from '../modal/modal';
 })
 export class MatchingPage {
   dashboardPage = DashboardPage;
-  homePage      = HomePage;
 
   @ViewChild('map') mapElement;
   map: any;
