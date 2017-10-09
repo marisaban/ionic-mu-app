@@ -1,22 +1,40 @@
-import { Component } from '@angular/core';
-import { ViewController } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { Nav, ViewController, NavController } from 'ionic-angular';
+
+import { LoginPage } from '../../pages/login/login';
+import { DashboardPage } from '../../pages/dashboard/dashboard';
+import { MatchingPage } from '../../pages/matching-jobs/matching-jobs';
+import { HistoryPage } from '../../pages/job-history/job-history';
+import { WorkPage } from '../../pages/work-logs/work-logs';
 
 @Component({
   selector: 'sub-nav',
   templateUrl: 'sub-nav.html'
 })
 export class SubNavComponent {
+  @ViewChild(Nav) nav: Nav;
 
   text: string;
+  pages: Array<{title: string, component: any}>;
+  
 
-  pageName: string;
+  constructor(public viewCtrl: ViewController, public navCtrl: NavController) {
 
-  constructor(public viewCtrl: ViewController) {
+    // this.text = this.viewCtrl.name;
+    this.pages = [
+      { title: 'Dashboard', component: DashboardPage },
+      { title: 'Matching Jobs', component: MatchingPage},
+      { title: 'Job History', component: HistoryPage},
+      { title: 'Work Logs', component: WorkPage},
+      { title: 'Logout', component: LoginPage}
+    ];
 
-    this.pageName = this.viewCtrl.name;
-    
-    
-    this.text = this.pageName;
   }
 
+  onNext(page){
+    this.navCtrl.push(page.component);
+  }
+
+
 }
+

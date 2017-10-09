@@ -10,9 +10,24 @@ import { ModalPage } from '../modal/modal';
 })
 export class WorkPage {
 
-  items: any = new Array(8);
+  items: any = [];
+  itemExpandHeight: number = 100;
 
   constructor(private modalCtrl: ModalController) {
+    this.items = [
+      { expanded: false },
+      { expanded: false },
+      { expanded: false },
+      { expanded: false }
+  ]
+  }
+
+  expandItem(item){
+    if(item.expanded === true){
+      item.expanded = false;
+    }else {
+      item.expanded = true;
+    }
     
   }
 

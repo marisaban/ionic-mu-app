@@ -10,10 +10,8 @@ export class ExpandableComponent {
   @Input('expandHeight') expandHeight;
   @Input('itemExpandHeight') itemExpandHeight;
 
-  currentHeight: number = 0;
-
   constructor() {
-    console.log('Hello ExpandableComponent Component');
+    
   }
 
   ngAfterViewInit(){

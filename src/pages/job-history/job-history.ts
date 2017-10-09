@@ -14,26 +14,42 @@ export class HistoryPage {
   dashboardPage = DashboardPage;
   homePage      = HomePage;
 
-  jobs: any = new Array(4);
-  //expanded
-  itemExpanded: boolean = false;
-  //expandHeight
+  jobs: any = [];
+  items: any = [];
   itemExpandHeight: number = 200;
 
-
-  currentHeight: number = 0;
-
   constructor(private modalCtrl: ModalController) {
-    
+    this.jobs = [
+        { expanded: false },
+        { expanded: false },
+        { expanded: false },
+        { expanded: false }
+    ]
+
+    this.items = [
+      { expanded: false },
+      { expanded: false },
+      { expanded: false },
+      { expanded: false }
+  ]
   }
 
   expandJob(job){
-    if(this.itemExpanded == false){
-      this.itemExpanded = true;
+    if(job.expanded === true){
+      job.expanded = false;
     }else {
-      this.itemExpanded = false;
+      job.expanded = true;
     }
+    
+  }
 
+  expandItem(item){
+    if(item.expanded === true){
+      item.expanded = false;
+    }else {
+      item.expanded = true;
+    }
+    
   }
 
   openModal(){

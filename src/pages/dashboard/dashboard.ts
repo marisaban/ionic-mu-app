@@ -2,7 +2,6 @@ import { Component, ViewChild } from '@angular/core';
 import {  ModalController } from 'ionic-angular';
 
 //pages 
-import { LoginPage } from '../login/login';
 import { ModalPage } from '../modal/modal';
 
 //install the actual types npm install @types/google-maps --save

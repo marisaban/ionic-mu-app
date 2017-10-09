@@ -11,6 +11,13 @@ ion-row {
             color: #fdb614;
             background: #404040;
         }
+        a.selected {
+            color: #fdb614;
+            background: #404040;
+        }
+    }
+    .row {
+        padding: 0px 25px;
     }
 }
 ion-content {
@@ -20,6 +27,11 @@ ion-content {
     .job-header.col {
         padding: 0 50px;
         text-align: left;
+        font-weight: bold;
+        color: #86888b;
+        h3 {
+            font-size: 20px;
+        }
     }
     .job-title.col, .job-location.col {
         padding-left: 40px;
@@ -34,4 +46,3 @@ ion-content {
         background: #f9f9f9;
     }
 }
-

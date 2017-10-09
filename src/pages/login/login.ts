@@ -17,7 +17,6 @@ export class LoginPage {
   }
 
   launchPage(){
-    console.log("hlello");
     this.navCtrl.setRoot(DashboardPage);
   }
 

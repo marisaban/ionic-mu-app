@@ -5,6 +5,11 @@ ion-content {
     .job-header.col {
         padding: 0 50px;
         text-align: left;
+        font-weight: bold;
+        color: #86888b;
+        h3 {
+            font-size: 20px;
+        }
     }
     .job-title.col, .job-location.col {
         padding-left: 40px;
