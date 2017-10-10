@@ -2,6 +2,14 @@ sub-nav {
     p {
         &.pagetitle {
             text-align: center;
+            font-weight: bolder;
+            letter-spacing: 1px;
         }
+    }
+    p:first-child {
+        display: block;
+    }
+    p {
+        display: none;
     }
 }

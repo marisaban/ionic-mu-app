@@ -1,13 +1,13 @@
 <div class="sub-nav">
   <ion-row>
     <ion-col col-4>
-        <p class="pagetitle">Before</p>
+        <p (click)="onPrev(page);"  class="pagetitle">{{ prevPage }}</p>
     </ion-col>
     <ion-col col-4>
-        <p class="pagetitle">{{text}}</p>
+        <p  class="pagetitle">{{ currentPage }}</p>
     </ion-col>
     <ion-col col-4>
-        <p *ngFor="let page of pages" (click)="onNext(page);"  class="pagetitle">{{ page.title }}</p>
+        <p (click)="onNext(page);"  class="pagetitle">{{ nextPage }}</p>
     </ion-col>
   </ion-row>
 </div>

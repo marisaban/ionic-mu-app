@@ -15,12 +15,14 @@ export class SubNavComponent {
   @ViewChild(Nav) nav: Nav;
 
   text: string;
+  prevPage: string;
+  nextPage: string;
+  currentPage: string;
   pages: Array<{title: string, component: any}>;
   
 
   constructor(public viewCtrl: ViewController, public navCtrl: NavController) {
 
-    // this.text = this.viewCtrl.name;
     this.pages = [
       { title: 'Dashboard', component: DashboardPage },
       { title: 'Matching Jobs', component: MatchingPage},
@@ -31,8 +33,18 @@ export class SubNavComponent {
 
   }
 
+ ngOnInit(page){
+  this.prevPage = this.pages[1].title;
+  this.nextPage = this.pages[2].title;
+  this.currentPage = this.pages[0].title;
+ }
+
+ onPrev(page){
+   this.navCtrl.push(this.pages[1].component);
+ }
+
   onNext(page){
-    this.navCtrl.push(page.component);
+    this.navCtrl.push(this.pages[2].component);
   }
 
 

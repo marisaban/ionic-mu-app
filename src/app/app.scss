@@ -39,6 +39,7 @@ ion-header {
     .menu-logo {
         margin: 0 auto;
         height: 50px;
+        margin-left: 100px;
     }
     .toolbar-background-md {
         background: #404040;
@@ -46,6 +47,7 @@ ion-header {
     }
     .toolbar-title-md {
         color: #fff;
+        position: relative;
     }
 }
 // ion-header toolbar header color for the pages

@@ -1,12 +1,10 @@
 ion-navbar {
-    button {
+    ion-icon {
         &.myModal {
             float: right;
-            width: 100px;
-            margin: 8px 15px;
-            span.button-inner {
-                font-size: 12px;
-            }
+            padding: 15px;
+            font-size: 2.5rem;
+            color: #327ae0;
         }
     }
 }

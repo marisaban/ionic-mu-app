@@ -3,12 +3,13 @@
           <button ion-button menuToggle>
             <ion-icon name="menu"></ion-icon>
           </button>
-          <button class="myModal" ion-button (click)="openModal()">Notification</button>
+          <ion-icon name="notifications" class="myModal" (click)="openModal()"></ion-icon>
           <ion-title>
               <img src="/assets/img/logo3.png" class="menu-logo" >
           </ion-title>
         </ion-navbar>
       </ion-header>
 <ion-content>
+    <sub-nav></sub-nav>
     <div #map id="map"></div>
 </ion-content>
