@@ -8,4 +8,15 @@ expandable {
         height: 200px;
         display: block;
     }
+    &.work-log {
+        .expandWrapper {
+            height: 0;
+            display: none;
+        }
+    
+        .expanded {
+            height: 100px;
+            display: block;
+        } 
+    }
 }
