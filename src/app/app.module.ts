@@ -13,6 +13,7 @@ import { ModalPage } from '../pages/modal/modal';
 //custom component
 import { SubNavComponent } from '../components/sub-nav/sub-nav';
 import { ExpandableComponent } from '../components/expandable/expandable';
+import { BottomToolbarComponent } from '../components/bottom-toolbar/bottom-toolbar';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -27,7 +28,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     WorkPage,
     ModalPage,
     SubNavComponent,
-    ExpandableComponent
+    ExpandableComponent,
+    BottomToolbarComponent
   ],
   imports: [
     BrowserModule,

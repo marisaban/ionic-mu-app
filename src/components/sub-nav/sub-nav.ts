@@ -11,6 +11,8 @@ import { WorkPage } from '../../pages/work-logs/work-logs';
   selector: 'sub-nav',
   templateUrl: 'sub-nav.html'
 })
+
+// sub navigation component = side menu
 export class SubNavComponent {
   @ViewChild(Nav) nav: Nav;
 
@@ -24,7 +26,7 @@ export class SubNavComponent {
   constructor(public viewCtrl: ViewController, public navCtrl: NavController) {
 
     this.pages = [
-      { title: 'Dashboard', component: DashboardPage },
+      { title: 'My Jobs', component: DashboardPage },
       { title: 'Matching Jobs', component: MatchingPage},
       { title: 'Job History', component: HistoryPage},
       { title: 'Work Logs', component: WorkPage},

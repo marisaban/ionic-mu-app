@@ -1,0 +1,24 @@
+<ion-footer>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-2 class="time-icon">
+        <div>
+            <ion-icon ios="ios-time-outline" md="md-time"></ion-icon>
+        </div>
+      </ion-col>
+      <ion-col col-4>
+          <div class="job-title">
+              {{ text }}
+          </div>
+          <div class="job-details">
+              Time: {{ time }} | Miles: {{ miles }}
+          </div>
+      </ion-col>
+      <ion-col col-4 offset-1>
+          <div class="buttons">
+              {{ text }}
+          </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>
