@@ -8,6 +8,13 @@ bottom-toolbar {
         }
         ion-icon {
             font-size: 2em;
+            &.ion-ios-play {
+                margin-right: 10px;
+                color: green;
+            }
+            &.ion-ios-square {
+                color: red;
+            }
         }
         div {
             color: #ffffff;

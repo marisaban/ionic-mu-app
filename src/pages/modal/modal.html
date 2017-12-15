@@ -22,29 +22,34 @@
 <ion-content class="modal-page" padding>
   <ion-grid class="modal-bg">
     <ion-row>
-        <ion-col col-12>
-            <h2>You Have a Job Offer!</h2>
-        </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-          <h4>Start Date</h4>
-          <p>20.09.2017</p>
-
-          <h4>End Date</h4>
-          <p>20.11.2017</p>
-
-          <h4>Job Location</h4>
-          <p>44 Shirley Ave, West Chicago, IL, 60185</p>
-
-          <h4>Description</h4>
-          <p>
-            We are looking for a responsible Budget Manager to develop our company's budget 
-            and oversee its implementation. You will also review budget proposals and prepare 
-            financial documents and reports...
-          </p>
-          <a>Click to see Details</a>
+      <ion-col col-12>
+          <h2>You Have a Job Offer!</h2>
+          <!-- passing in data, not working yet -->
+          <div [(ngModel)]="offer" ngDefaultControl>
+          <h4 class="job-title" *ngFor="let offer of offers" >{{ offer.title }} </h4>
+          </div>
       </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+        <h4>Start Date</h4>
+        <p>20.09.2017</p>
+
+        <h4>End Date</h4>
+        <p>20.11.2017</p>
+
+        <h4>Job Location</h4>
+        <p>44 Shirley Ave, West Chicago, IL, 60185</p>
+
+        <h4>Description</h4>
+        <p>
+          We are looking for a responsible Budget Manager to develop our company's budget 
+          and oversee its implementation. You will also review budget proposals and prepare 
+          financial documents and reports...
+        </p>
+        <a class="details" (click)="showDetails();">Click to see Details</a>
+    </ion-col>
+
     </ion-row>
 </ion-grid>
 </ion-content>

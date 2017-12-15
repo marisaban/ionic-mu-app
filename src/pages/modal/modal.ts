@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, ViewController } from 'ionic-angular';
+import { Http } from '@angular/http';
 
-/**
- * Generated class for the ModalPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+// import { TranslateService } from '@ngx-translate/core';
+import { DataFinder } from '../../providers/datafinder';
+// import { ItemApi } from '../../providers/item-api';
 
 @IonicPage()
 @Component({
@@ -14,16 +12,28 @@ import { IonicPage, ViewController } from 'ionic-angular';
   templateUrl: 'modal.html',
 })
 export class ModalPage {
+  offers = [];
 
-  constructor(private viewCtrl: ViewController) {
+  constructor(private viewCtrl: ViewController, private dataFinder: DataFinder) {
+  }
+
+  ionViewDidLoad() {
+    this.dataFinder.getJSONDataAsync("testData.json").then(data => {
+      this.SetQueryOptionsData(data);
+    });
+  }
+
+  /* Sets data with returned JSON array */
+  SetQueryOptionsData(data : any) {
+    this.offers = data.offers;
   }
 
   closeModal(){
     this.viewCtrl.dismiss();
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ModalPage');
+  showDetails(){
+    console.log("show");
   }
 
 }

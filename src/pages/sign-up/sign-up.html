@@ -1,0 +1,27 @@
+<ion-content class="bg-img">
+    <ion-grid>
+        <ion-row padding>
+            <ion-col class="logo" col-12>
+                <img src="/assets/img/logo4.png" />
+                <ion-list class="login-details">
+                        <button ion-button class="facebook">
+                            <ion-icon ios="logo-facebook" md="logo-facebook"></ion-icon>
+                             Sign up with Facebook
+                          </button>
+                        <button ion-button class="sign-in" (click)="launchEmailSignUp();">
+                            <ion-icon ios="ios-mail" md="md-mail"></ion-icon>
+                             Sign up with email
+                        </button>                        
+                    </ion-list>
+            </ion-col>
+        </ion-row>
+        <ion-row padding class="sign-up">
+            <ion-col col-sm-8>
+                <p>Already have an account?</p>
+            </ion-col>
+            <ion-col col-sm-4>
+                <button ion-button (click)="launchPage();">Login</button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

@@ -3,12 +3,16 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { FormBuilder, Validators } from '@angular/forms';
+
+
 import { LoginPage } from '../pages/login/login';
 import { DashboardPage } from '../pages/dashboard/dashboard';
 import { MatchingPage } from '../pages/matching-jobs/matching-jobs';
 import { HistoryPage } from '../pages/job-history/job-history';
 import { WorkPage } from '../pages/work-logs/work-logs';
-
+import { SignUpPage } from '../pages/sign-up/sign-up';
+import { EmailSignupPage } from '../pages/email-signup/email-signup';
 
 @Component({
   templateUrl: 'app.html'

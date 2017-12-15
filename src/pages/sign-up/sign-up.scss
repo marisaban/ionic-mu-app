@@ -1,0 +1,47 @@
+page-sign-up {
+    ion-grid {
+        height: 100%;
+        justify-content: space-around;
+    }
+    ion-item.item {
+        margin: 15px 0;
+    }
+    ion-row.sign-up {
+        margin-top: 75px;
+    }
+    ion-row.sign-up.row {
+        margin-top: 100px;
+    }
+    ion-icon {
+        margin-right: 10px;
+    }
+    .bg-img {
+        background: url('/assets/img/bg-phone.jpg');
+        background-position: 50% 50%;
+        background-color: #5c6164;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: #fff;
+        height: 100%;
+        padding: 0;
+        border: 0;
+        text-align: left;
+    }
+    .logo {
+        margin: 0 auto;
+        height: 150px;
+        text-align: center;
+    }
+    .login-details {
+        margin: 0 auto;
+        
+    }
+    button {
+        width: 100%;
+        &.sign-in {
+            background: #fdb614;
+            color: black;
+        }
+    }
+}
+

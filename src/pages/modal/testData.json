@@ -1,0 +1,133 @@
+{
+    "jobs": [
+        {
+            "title": "Front End Web Developer",
+            "id": 12345,
+            "salary": 75000,
+            "qualifications": [
+                "javascript",
+                "html",
+                "css",
+                "bootstrap",
+                "angular",
+                "vue.js",
+                "ionic"
+            ],
+            "starttime": {
+              "timestamp": "2017-12-12T08:20+0:1:00"
+            },
+            "endtime": {
+              "timestamp": "2017-12-12T16:20+0:1:00"
+            },
+            "location": {
+                "lat": 49.249771,
+                "long": -123.19238
+            },
+            "description": "We are looking for a responsible developer with  at last 4 years of experience..."
+        }
+    ],
+    "users": [
+        {
+            "user": "John Doe",
+            "id": 12345,
+            "sin": 123456,
+            "skills": [
+                "javascript",
+                "html",
+                "css",
+                "bootstrap",
+                "angular",
+                "vue.js",
+                "ionic"
+            ],
+            "location": {
+                "lat": 49.249771,
+                "long": -123.19238
+            }
+        },
+        {
+            "user": "Luis Garcia",
+            "id": 224400,
+            "sin": 323452,
+            "skills": [
+                "javascript",
+                "html",
+                "css",
+                "bootstrap",
+                "angular",
+                "vue.js",
+                "ionic"
+            ],
+            "location": {
+                "lat": 49.249771,
+                "long": -123.19238
+            }
+        },
+        {
+            "user": "Linda Williams",
+            "id": 224400,
+            "sin": 323452,
+            "skills": [
+                "javascript",
+                "html",
+                "css",
+                "bootstrap",
+                "angular",
+                "vue.js",
+                "ionic"
+            ],
+            "location": {
+                "lat": 49.249771,
+                "long": -123.19238
+            }
+        }
+    ],
+    "offer": [
+        {
+            "title": "Budget Manager",
+            "id": 5678,
+            "salary": 75000,
+            "starttime": {
+              "timestamp": "2017-12-12T08:20+0:1:00"
+            },
+            "endtime": {
+              "timestamp": "2017-12-12T16:20+0:1:00"
+            },
+            "location": {
+                "lat": 49.249771,
+                "long": -123.19238
+            },
+            "description": "We are looking for a responsible developer with  at last 4 years of experience..."
+        },
+        {
+            "title": "Accountant",
+            "id": 5678,
+            "salary": 55000,
+            "starttime": {
+              "timestamp": "2017-12-12T08:20+0:1:00"
+            },
+            "endtime": {
+              "timestamp": "2017-12-12T16:20+0:1:00"
+            },
+            "location": {
+                "lat": 49.249771,
+                "long": -123.19238
+            },
+            "description": "We are looking for a responsible accountant with  at last 4 years of experience..."
+        }
+    ],
+    "worklogs": [
+        {
+            "month": "January",
+            "id": 12345,
+            "starttime": {
+              "timestamp": "2017-01-12T08:20+0:1:00"
+            },
+            "endtime": {
+              "timestamp": "2017-01-30T16:20+0:1:00"
+            },
+            "hours": 100,
+            "description": "We are looking for a responsible developer with  at last 4 years of experience..."
+        }
+    ]
+}
