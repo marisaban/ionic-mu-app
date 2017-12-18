@@ -1,0 +1,16 @@
+new-user-header {
+    ion-header {
+        .menu-logo {
+            margin: 0 auto;
+            height: 50px;
+        }
+        .toolbar-background-md {
+            background: #404040;
+            color: #fff;
+        }
+        .toolbar-title-md {
+            color: #fff;
+            display: flex;
+        }
+    }
+}

@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
-// httpModule
+// import { DatePicker} from '@ionic-native/datepicker';
 import { HttpModule } from '@angular/http';
 
 import { LoginPage } from '../pages/login/login';
@@ -19,6 +19,7 @@ import { BuildProfilePage } from '../pages/build-profile/build-profile'
 import { SubNavComponent } from '../components/sub-nav/sub-nav';
 import { ExpandableComponent } from '../components/expandable/expandable';
 import { BottomToolbarComponent } from '../components/bottom-toolbar/bottom-toolbar';
+import { NewUserHeaderComponent } from '../components/new-user-header/new-user-header';
 
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -41,7 +42,8 @@ import { ItemApi } from '../providers/item-api';
     BuildProfilePage,
     SubNavComponent,
     ExpandableComponent,
-    BottomToolbarComponent
+    BottomToolbarComponent,
+    NewUserHeaderComponent
   ],
   imports: [
     BrowserModule,
