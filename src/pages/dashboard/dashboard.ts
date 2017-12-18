@@ -75,7 +75,7 @@ export class DashboardPage {
     myModal.present();
   }
 
-}//export class
+}
 
 
   
