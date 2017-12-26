@@ -1,13 +1,18 @@
 sub-nav {
+    .sub-nav {
+        background: white;
+        height: 25px;
+    }
     p {
         &.pagetitle {
             text-align: center;
             font-weight: bolder;
-            letter-spacing: 1px;
         }
     }
     p:first-child {
         display: block;
+        margin: 0px;
+        font-size: 12px;
     }
     p {
         display: none;

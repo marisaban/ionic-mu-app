@@ -1,11 +1,4 @@
-<!--
-  Generated template for the ModalPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header class="main-header">
-
   <ion-navbar>
           <button ion-button menuToggle>
             <ion-icon name="menu"></ion-icon>
@@ -24,9 +17,9 @@
     <ion-row>
       <ion-col col-12>
           <h2>You Have a Job Offer!</h2>
-          <!-- passing in data, not working yet -->
           <div [(ngModel)]="offer" ngDefaultControl>
           <h4 class="job-title" *ngFor="let offer of offers" >{{ offer.title }} </h4>
+          <h4 class="job-title">Budget Manager</h4>
           </div>
       </ion-col>
   </ion-row>
@@ -49,7 +42,23 @@
         </p>
         <a class="details" (click)="showDetails();">Click to see Details</a>
     </ion-col>
-
-    </ion-row>
+  </ion-row>
+  <ion-row class="options">
+    <ion-col col-4>
+      <div class="icon">
+        <ion-icon name="checkmark" class="check"></ion-icon>
+      </div>
+    </ion-col>
+    <ion-col col-4>
+      <div class="icon">
+        <ion-icon name="close" class="close" (click)="closeModal()"></ion-icon>
+      </div>
+    </ion-col>
+    <ion-col col-4>
+      <div class="icon">
+        <ion-icon name="star" class="star"></ion-icon>
+      </div>
+    </ion-col>
+  </ion-row>
 </ion-grid>
 </ion-content>

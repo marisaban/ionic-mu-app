@@ -1,6 +1,6 @@
 bottom-toolbar {
     ion-footer {
-        background-color: #404040;
+        background-color: #cccccc;
         ion-col {
             &.time-icon {
                 text-align: center;
@@ -8,16 +8,19 @@ bottom-toolbar {
         }
         ion-icon {
             font-size: 2em;
-            &.ion-ios-play {
+            &.play {
                 margin-right: 10px;
                 color: green;
             }
-            &.ion-ios-square {
+            &.stop {
                 color: red;
             }
         }
+        .grid {
+            padding: 0;
+        }
         div {
-            color: #ffffff;
+            color: #000000;
             &.job-title {
                 text-align: left;
             }
