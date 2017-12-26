@@ -8,6 +8,9 @@ page-login {
     }
     ion-row.sign-up {
         margin-top: 75px;
+        p {
+            text-align: right;
+        }
     }
     ion-row.sign-up.row {
         margin-top: 100px;
@@ -30,14 +33,38 @@ page-login {
         text-align: center;
     }
     .login-details {
-        margin: 0 auto;
+        margin: 0 40px;
         
+    }
+    .signup-div {
+        display: block;
+        width: 310px;
+        margin: 0 auto;
+        p { 
+            float: left;
+        }
+    }
+    .signup-btn {
+        width: 100px;
+        float: right;
     }
     button {
         width: 100%;
         &.sign-in {
             background: #fdb614;
             color: black;
+        }
+    }
+    .signin-details {
+        display: flex;
+        width: 100%;
+        ion-icon {
+            float: left;
+            align-self: center;
+        }
+        p { 
+            float: left;
+            margin-left: 10px;
         }
     }
 }

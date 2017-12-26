@@ -13,21 +13,27 @@
         </ion-col>
       </ion-row>
       <ion-row>
-        <ion-col col-6>
-          <h5>Image goes here</h5>
+        <ion-col col-4 class="col-user-avatar">
+          <div class="user-avatar">
+            <ion-icon ios="ios-person" md="md-person"></ion-icon>
+          </div>
         </ion-col>
-        <ion-col col-6>
-          John Doe
-          johndoe@mail.com
+        <ion-col col-8>
+          <p class="user-info">
+            <span class="user-name">John Doe</span><br>
+            <span class="user-email">johndoe@gmail.com</span>
+          </p>
         </ion-col>
       </ion-row>
       <ion-row>
-        <ion-col col-4>
-          S.I.N #
+        <ion-col col-3>
+          <div class="sin">
+              <p>S.I.N #</p>
+          </div>
         </ion-col>
-        <ion-col col-8>
+        <ion-col col-9>
           <ion-list>
-              <ion-item>
+              <ion-item class="sin-field">
                 <ion-input type="text" placeholder="XXX-XXX-XXX"></ion-input>
               </ion-item>
           </ion-list>

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, ViewController } from 'ionic-angular';
-import { Http } from '@angular/http';
+// import { Http } from '@angular/http';
 
 // import { TranslateService } from '@ngx-translate/core';
 import { DataFinder } from '../../providers/datafinder';

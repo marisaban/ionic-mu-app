@@ -18,6 +18,20 @@ ion-content {
             border: none;
         }
     }
+    .list-ios {
+        margin: 0px;
+    }
+    .list-ios > .item-block:first-child {
+        border-radius: 4px;
+        border: 0.55px solid #c8c7cc;
+    }
+    .list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block {
+        border-radius: 4px;
+        border: 0.55px solid #c8c7cc;
+    }
+    .list-ios .item-block .item-inner {
+        border: 0;
+    }
 }
 ion-header {
     .menu-logo {
@@ -44,3 +58,12 @@ ion-header {
     height: 100%;
     width: 100%;
 }
+@font-face{
+    font-family: 'Nunito', sans-serif;
+    src: url('../assets/fonts/nunito.woff2') format('woff2');
+    }
+     
+    *{
+    font-family: 'Nunito', sans-serif;
+    font-weight: lighter;
+    }

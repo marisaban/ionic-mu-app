@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import {  ModalController } from 'ionic-angular';
+import {  ModalController, NavController, ViewController } from 'ionic-angular';
 
 //pages 
 import { ModalPage } from '../modal/modal';
@@ -16,7 +16,7 @@ export class DashboardPage {
   @ViewChild('map') mapElement;
   map: any;
 
-  constructor(private modalCtrl: ModalController) {
+  constructor(private modalCtrl: ModalController, public navCtrl: NavController, public viewCtrl: ViewController) {
 
   }
 
@@ -70,7 +70,6 @@ export class DashboardPage {
   }
 
   openModal(){
-
     let myModal = this.modalCtrl.create(ModalPage);
     myModal.present();
   }

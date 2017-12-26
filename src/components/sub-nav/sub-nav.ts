@@ -35,6 +35,11 @@ export class SubNavComponent {
 
   }
 
+  ionViewWillEnter(){
+    
+    console.log(3423423423423);
+  }
+
  ngOnInit(page){
   this.prevPage = this.pages[1].title;
   this.nextPage = this.pages[2].title;
