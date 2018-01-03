@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
-import { IonicPage, ViewController } from 'ionic-angular';
+import { IonicPage, ViewController, NavController } from 'ionic-angular';
 // import { Http } from '@angular/http';
 
 // import { TranslateService } from '@ngx-translate/core';
 import { DataFinder } from '../../providers/datafinder';
 // import { ItemApi } from '../../providers/item-api';
+
+import { JobDetailsPage } from '../job-details/job-details';
 
 @IonicPage()
 @Component({
@@ -13,8 +15,9 @@ import { DataFinder } from '../../providers/datafinder';
 })
 export class ModalPage {
   offers = [];
+  jobDetalsPage = JobDetailsPage;
 
-  constructor(private viewCtrl: ViewController, private dataFinder: DataFinder) {
+  constructor(private viewCtrl: ViewController, public navCtrl: NavController, private dataFinder: DataFinder) {
   }
 
   ionViewDidLoad() {
@@ -34,6 +37,10 @@ export class ModalPage {
 
   showDetails(){
     console.log("show");
+  }
+
+  openJobDescription(){
+    this.navCtrl.setRoot(JobDetailsPage);
   }
 
 }

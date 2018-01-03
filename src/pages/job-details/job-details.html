@@ -1,0 +1,54 @@
+<ion-header class="main-header">
+    <ion-navbar>
+      <button ion-button menuToggle click="clickMe()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-icon name="notifications" class="myModal" (click)="openModal()"></ion-icon>
+      <ion-title>
+          <img src="/assets/img/logo3.png" class="menu-logo" >
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+<ion-content>
+<sub-nav></sub-nav>
+<ion-grid>
+    <div class="section-1">
+        <ion-row>
+          <ion-col>
+            <h1 class="page-title">Job Details</h1>
+            <h4>Start Date</h4>
+            <p>20.09.2017</p>
+      
+            <h4>End Date</h4>
+            <p>20.11.2017</p>
+      
+            <h4>Job Location</h4>
+            <p>44 Shirley Ave, West Chicago, IL, 60185</p>
+          </ion-col>
+        </ion-row>
+        </div>
+        <div class="section-2">
+          <div #map id="map"></div>
+        </div>
+        <div class="section-3">
+         <ion-row>
+           <ion-col class="description">
+              <h4>Description</h4>
+              <p>
+                We are looking for a responsible Budget Manager to develop our company's budget 
+                and oversee its implementation. You will also review budget proposals and prepare 
+                financial documents and reports. Our ideal candidate holds a degree in Accounting or 
+                Finance and is familiar with legal regulations of accounting and budgeting. You 
+                should combine excellent numeracy skills with the ability to analyze and present complex 
+                data. To be successful in this role, you should be able to use critical thinking to create 
+                financial forecasts and make budgeting decisions. Ultimately, you should plan, evaluate, 
+                design and implement our company’s budget, ensuring business growth and compliance with the law.
+              </p>
+           </ion-col>
+         </ion-row>
+        </div>
+</ion-grid>
+<bottom-toolbar> </bottom-toolbar>
+</ion-content>
+
+

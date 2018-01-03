@@ -13,7 +13,8 @@ import { WorkPage } from '../pages/work-logs/work-logs';
 import { ModalPage } from '../pages/modal/modal';
 import { SignUpPage } from '../pages/sign-up/sign-up';
 import { EmailSignupPage } from '../pages/email-signup/email-signup';
-import { BuildProfilePage } from '../pages/build-profile/build-profile'
+import { BuildProfilePage } from '../pages/build-profile/build-profile';
+import { JobDetailsPage } from '../pages/job-details/job-details';
 
 //custom component
 import { SubNavComponent } from '../components/sub-nav/sub-nav';
@@ -39,6 +40,7 @@ import { ItemApi } from '../providers/item-api';
     SignUpPage,
     EmailSignupPage,
     BuildProfilePage,
+    JobDetailsPage,
     SubNavComponent,
     ExpandableComponent,
     BottomToolbarComponent
@@ -60,7 +62,8 @@ import { ItemApi } from '../providers/item-api';
     SignUpPage,
     EmailSignupPage,
     ModalPage,
-    BuildProfilePage
+    BuildProfilePage,
+    JobDetailsPage
   ],
   providers: [
     StatusBar,

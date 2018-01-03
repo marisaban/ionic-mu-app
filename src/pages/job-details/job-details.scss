@@ -1,0 +1,13 @@
+page-job-details {
+    ion-content {
+        #map {
+            height: 200px;
+        }
+        .description p {
+            line-height: 20px;
+        }
+    }
+    ion-footer{
+        position: relative;
+    }
+}

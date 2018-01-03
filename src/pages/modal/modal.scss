@@ -53,15 +53,17 @@ ion-content {
         ion-icon {
             display: block;
             text-align: center;
-            font-size: 1.8em;
             &.check {
                 color: green;
+                font-size: 2.8em;
             }  
             &.close {
                 color: red;
+                font-size: 2.8em;
             }
             &.star {
                 color: #fdb614;
+                font-size: 2.8em;
             }
         }
         ion-icon:hover, ion-icon:active {

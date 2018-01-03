@@ -1,16 +1,11 @@
 <ion-header class="main-header">
   <ion-navbar>
-          <button ion-button menuToggle>
-            <ion-icon name="menu"></ion-icon>
-          </button>
-          <ion-icon class="myModal" (click)="closeModal()" name="close"></ion-icon>
-          <ion-title>
-              <img src="/assets/img/logo3.png" class="menu-logo" >
-          </ion-title>    
+      <ion-icon class="myModal" (click)="closeModal()" name="close"></ion-icon>
+      <ion-title>
+          <img src="/assets/img/logo3.png" class="menu-logo" >
+      </ion-title>    
   </ion-navbar>
-
 </ion-header>
-
 
 <ion-content class="modal-page" padding>
   <ion-grid class="modal-bg">
@@ -40,18 +35,18 @@
           and oversee its implementation. You will also review budget proposals and prepare 
           financial documents and reports...
         </p>
-        <a class="details" (click)="showDetails();">Click to see Details</a>
+        <a class="details" (click)="showDetails()">Click to see Details</a>
     </ion-col>
   </ion-row>
   <ion-row class="options">
     <ion-col col-4>
       <div class="icon">
-        <ion-icon name="checkmark" class="check"></ion-icon>
+        <ion-icon name="checkmark" (click)="openJobDescription();" class="check"></ion-icon>
       </div>
     </ion-col>
     <ion-col col-4>
       <div class="icon">
-        <ion-icon name="close" class="close" (click)="closeModal()"></ion-icon>
+        <ion-icon name="close" class="close" (click)="closeModal();"></ion-icon>
       </div>
     </ion-col>
     <ion-col col-4>
