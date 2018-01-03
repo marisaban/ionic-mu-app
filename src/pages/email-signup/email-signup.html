@@ -1,46 +1,31 @@
-<!-- <new-user-header></new-user-header> -->
-
-<ion-header class="main-header">
-    <ion-navbar>
-      <ion-title>
-          <img src="/assets/img/logo3.png" class="menu-logo" >
-      </ion-title>
-    </ion-navbar>
-  </ion-header>
 <ion-content class="sign-up">
     <ion-grid>
       <ion-row>
         <ion-col class="upload-avatar" col-12>
-            <h2>User Sign Up</h2>
-            <ion-icon ios="ios-person" md="md-person"></ion-icon>
+            <h3>Let's get you set up</h3>
         </ion-col>
       </ion-row>
       <form>
           <ion-row class="field-row">
-              <ion-col col-sm-6>
+              <ion-col col-sm-12>
                   <ion-list class="signup-details">
                       <ion-item class="field">
                         <ion-input type="text" placeholder="First Name"></ion-input>
                      </ion-item>
                   </ion-list>
               </ion-col>
-              <ion-col col-sm-6>
+          </ion-row>
+
+          <ion-row class="field-row">
+                <ion-col col-sm-12>
               <ion-list>
                   <ion-item class="field">
                     <ion-input type="text" placeholder="Last Name"></ion-input>
                   </ion-item>
                 </ion-list>
-              </ion-col>
-          </ion-row>
-        <ion-row class="field-row">
-            <ion-col col-sm-12>
-                <ion-list>
-                    <ion-item class="field"> 
-                        <ion-input type="text" placeholder="Email Address"></ion-input>
-                        </ion-item>
-                </ion-list>
-                </ion-col>
-        </ion-row>
+                    </ion-col>
+            </ion-row>
+
         <ion-row class="field-row">
             <ion-col col-sm-12>
                 <ion-list>
@@ -61,7 +46,9 @@
         </ion-row>
         <ion-row padding class="sign-up">
             <ion-col col-sm-12>
-                <button ion-button (click)="launchPage();">Create</button>
+              <div class="next">
+                <ion-icon name="arrow-dropright-circle" (click)="launchPage();"></ion-icon>
+              </div>
             </ion-col>
         </ion-row>
     </form>

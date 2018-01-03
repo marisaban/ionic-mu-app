@@ -2,29 +2,24 @@
     <ion-grid>
         <ion-row padding>
             <ion-col class="logo" col-12>
-                <img src="/assets/img/logo4.png" />
                 <ion-list class="login-details">
-                    <button ion-button class="facebook">
-                      <div class="signup-details">
-                          <ion-icon ios="logo-facebook" md="logo-facebook"></ion-icon>
-                          <p>Sign up with Facebook</p>
-                      </div>
-                    </button>
-                    <button ion-button class="sign-in" (click)="launchEmailSignUp();">
-                      <div class="signup-details">
-                        <ion-icon ios="ios-mail" md="md-mail"></ion-icon>
-                        <p>Sign up with email</p>
-                      </div>
-                    </button>                        
+                        <h3>Enter your email address</h3>
+                  <ion-item class="field">
+                    <ion-input floating type="text"></ion-input>
+                  </ion-item>
                 </ion-list>
             </ion-col>
         </ion-row>
         <ion-row padding class="sign-up">
-            <ion-col col-sm-12>
-              <div class="login-div">
-                <p>Already have an account?</p>
-                <button ion-button class="login-btn" (click)="launchPage();">Login</button>
+            <ion-col col-sm-6>
+              <div class="social">
+                <p>Connect with Facebook</p>
               </div>
+            </ion-col>
+            <ion-col col-sm-6>
+                <div class="next">
+                  <ion-icon name="arrow-dropright-circle" (click)="launchEmailSignUp()"></ion-icon>
+                </div>
             </ion-col>
         </ion-row>
     </ion-grid>

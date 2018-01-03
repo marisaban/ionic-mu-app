@@ -1,4 +1,7 @@
 page-login {
+    .scroll-content {
+        height: 120vh;
+    }
     ion-grid {
         height: 100%;
         justify-content: space-around;
@@ -6,17 +9,20 @@ page-login {
     ion-item.item {
         margin: 15px 0;
     }
-    ion-row.sign-up {
-        margin-top: 75px;
+    ion-row {
         p {
-            text-align: right;
+            text-transform: uppercase;
+            font-size: 1.2em;
+        }
+        img {
+            margin-top: 50px;
         }
     }
     ion-row.sign-up.row {
-        margin-top: 150px;
+        margin-top: 0px;
     }
     .bg-img {
-        background: url('/assets/img/bg-phone3.jpg');
+        background: url('/assets/img/landingbw.png');
         background-position: 50% 50%;
         background-color: #5c6164;
         background-repeat: no-repeat;
@@ -45,26 +51,17 @@ page-login {
         }
     }
     .signup-btn {
-        width: 100px;
         float: right;
+        background: #fdb614;
+        color: #ffffff;
+        border-radius: 0;
     }
     button {
         width: 100%;
         &.sign-in {
-            background: #fdb614;
+            border-radius: 0;
+            background: #cccccc;
             color: black;
-        }
-    }
-    .signin-details {
-        display: flex;
-        width: 100%;
-        ion-icon {
-            float: left;
-            align-self: center;
-        }
-        p { 
-            float: left;
-            margin-left: 10px;
         }
     }
 }

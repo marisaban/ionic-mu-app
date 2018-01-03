@@ -1,10 +1,3 @@
-<ion-header class="main-header">
-    <ion-navbar>
-      <ion-title>
-          <img src="/assets/img/logo3.png" class="menu-logo" >
-      </ion-title>
-    </ion-navbar>
-  </ion-header>
   <ion-content>
     <ion-grid>
       <ion-row>
@@ -13,74 +6,80 @@
         </ion-col>
       </ion-row>
       <ion-row>
-        <ion-col col-4 class="col-user-avatar">
+        <ion-col col-12 class="col-user-avatar">
           <div class="user-avatar">
-            <ion-icon ios="ios-person" md="md-person"></ion-icon>
+            <ion-icon class="avatar" ios="ios-person" md="md-person"></ion-icon>
           </div>
-        </ion-col>
-        <ion-col col-8>
-          <p class="user-info">
-            <span class="user-name">John Doe</span><br>
-            <span class="user-email">johndoe@gmail.com</span>
-          </p>
         </ion-col>
       </ion-row>
-      <ion-row>
-        <ion-col col-3>
-          <div class="sin">
-              <p>S.I.N #</p>
-          </div>
-        </ion-col>
-        <ion-col col-9>
-          <ion-list>
-              <ion-item class="sin-field">
-                <ion-input type="text" placeholder="XXX-XXX-XXX"></ion-input>
+
+  <form>
+    <ion-row class="field-row">
+      <ion-col col-sm-12>
+        <ion-list class="signup-details">
+            <ion-item class="field">
+              <ion-input type="text" placeholder="Social Insurance Number"></ion-input>
+            </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row class="field-row">
+        <ion-col col-sm-12>
+          <ion-list class="signup-details">
+              <ion-item class="field">
+                <ion-textarea type="text" placeholder="Home Address, City, Postal Code"></ion-textarea>
               </ion-item>
           </ion-list>
         </ion-col>
       </ion-row>
-      <ion-row>
-        <ion-col col-12>
-          <ion-list>
-              <ion-item>
-                <ion-input type="text" placeholder="Home Address"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-textarea placeholder="Enter skills here, repeated by commas i.e. painting, mudding, taping, finishing">
-                </ion-textarea>
-              </ion-item>
-          </ion-list>
-        </ion-col>
-      </ion-row>
-
-      <ion-row>
-        <ion-col col-4>
-          <p>Enter Availability</p>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col col-4>
-          <p>From:</p>
-        </ion-col>
-        <ion-col col-8>
-           
-        </ion-col>
-      </ion-row>
-
-      <ion-row>
-          <ion-col col-4>
-            <p>To:</p>
+      <ion-row class="field-row">
+          <ion-col col-sm-12>
+            <ion-list class="signup-details">
+                <ion-item class="field">
+                  <ion-input type="text" placeholder="Enter your industry e.g. Engineering"></ion-input>
+                </ion-item>
+            </ion-list>
           </ion-col>
-          <ion-col col-8>
-             
-          </ion-col>
-      </ion-row> 
-      <ion-row>
-        <ion-col col-12>
-            <button ion-button (click)="launchDashboardPage();">
-              Create
-            </button>
+        </ion-row>
+        <ion-row class="field-row">
+            <ion-col col-sm-12>
+              <ion-list class="signup-details">
+                  <ion-item class="field">
+                    <ion-input type="text" placeholder="Enter your desired role e.g. Structural Engineer"></ion-input>
+                  </ion-item>
+              </ion-list>
+            </ion-col>
+          </ion-row>
+
+        <ion-row>
+            <ion-col col-12>
+              <p>Enter Availability</p>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-4>
+              <p>From:</p>
+            </ion-col>
+            <ion-col col-8>
+               
+            </ion-col>
+          </ion-row>    
+        <ion-row>
+            <ion-col col-4>
+              <p>To:</p>
+            </ion-col>
+            <ion-col col-8>
+                
+            </ion-col>
+        </ion-row> 
+
+    <ion-row padding class="sign-up">
+        <ion-col col-sm-12>
+          <div class="next">
+            <ion-icon name="checkmark-circle" (click)="launchDashboardPage();"></ion-icon>
+          </div>
         </ion-col>
-      </ion-row>
-    </ion-grid>
+    </ion-row>
+  </form>
+  </ion-grid>
   </ion-content>

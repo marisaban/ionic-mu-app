@@ -6,6 +6,9 @@ page-sign-up {
     ion-item.item {
         margin: 15px 0;
     }
+    ion-row {
+        margin: 15px;
+    }
     ion-row.sign-up {
         margin-top: 75px;
     }
@@ -15,37 +18,19 @@ page-sign-up {
             text-align: right;
         }
     }
-    .bg-img {
-        background: url('/assets/img/bg-phone.jpg');
-        background-position: 50% 50%;
-        background-color: #5c6164;
-        background-repeat: no-repeat;
-        background-size: cover;
-        color: #fff;
-        height: 100%;
-        padding: 0;
-        border: 0;
-        text-align: left;
-    }
-    .logo {
-        margin: 0 auto;
-        height: 150px;
-        text-align: center;
-    }
-    .login-details {
-        margin: 0 40px;
-    }
-    .login-div {
+    .social{
         display: block;
-        width: 310px;
-        margin: 0 auto;
         p { 
             float: left;
         }
     }
-    .login-btn {
-        width: 100px;
+    .next {
         float: right;
+        font-size: 2.5em;
+        margin-right: 10px;
+        ion-icon {
+            color: #fdb614;
+        }
     }
     button {
         width: 100%;

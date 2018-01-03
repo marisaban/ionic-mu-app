@@ -14,10 +14,6 @@ export class BuildProfilePage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
   }
 
-  ionViewDidLeave() {
-    
-  }
-
   launchDashboardPage(){
     this.navCtrl.setRoot(DashboardPage);
   }

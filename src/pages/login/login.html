@@ -1,37 +1,23 @@
 <ion-content class="bg-img">
-    <ion-grid>
-        <ion-row padding>
-            <ion-col class="logo" col-12>
-                <img src="/assets/img/logo4.png" />
-                <ion-list class="login-details">
-                    <ion-item>
-                        <ion-input placeholder="Email Address"></ion-input>
-                    </ion-item>
-                    <ion-item>
-                        <ion-input placeholder="Password"></ion-input>
-                    </ion-item>
-                    <button ion-button class="sign-in" (click)="launchPage();">
-                      <div class="signin-details">
-                        <ion-icon ios="ios-mail" md="md-mail"></ion-icon>
-                        <p>Sign In</p>
-                      </div>
-                    </button>
-                    <button ion-button class="facebook">
-                      <div class="signin-details">
-                        <ion-icon ios="logo-facebook" md="logo-facebook"></ion-icon>
-                        <p>Sign In with Facebook</p>
-                      </div>
-                    </button>
-                </ion-list>
-            </ion-col>
-        </ion-row>
-        <ion-row padding class="sign-up">
-            <ion-col col-sm-12>
-              <div class="signup-div">
-                <p>Don't have an account?</p>
-                <button ion-button class="signup-btn" (click)="launchSignUp();">Sign Up</button>
-              </div>
-            </ion-col>
-        </ion-row>
-    </ion-grid>
+<ion-grid>
+    <ion-row padding>
+        <ion-col class="logo" col-12>
+            <img src="/assets/img/logo4.png" />
+        </ion-col>
+    </ion-row>
+    <ion-row padding class="sign-up">
+        <ion-col col-sm-6>
+        <button ion-button class="sign-in" (click)="launchPage();">
+            <div class="signin-details">
+            <p>Sign In</p>
+            </div>
+        </button>
+        </ion-col>            
+        <ion-col col-sm-6>
+            <button ion-button class="signup-btn" (click)="launchSignUp();">
+            <p>Register</p>
+            </button>
+        </ion-col>
+    </ion-row>
+</ion-grid>
 </ion-content>

@@ -6,16 +6,22 @@ page-email-signup  {
         height: 100%;
         justify-content: space-around;
     }
+    ion-row {
+        margin: 15px;
+    }
     .scroll-content {
         margin-top: 10px;
     }
     ion-item.item {
         margin: 15px 0;
     }
-    ion-icon {
-        display: block;
-        text-align: center;
-        font-size: 5rem;
+    .next {
+        float: right;
+        font-size: 2.5em;
+        margin-right: 10px;
+        ion-icon {
+            color: #fdb614;
+        }
     }
     ion-content {
         h2 {
@@ -32,9 +38,8 @@ page-email-signup  {
             color: black;
         }
     }
-    .list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block {
-        border-radius: 4px;
-        border: 0.55px solid #c8c7cc;
+    .list-ios > .item-block:first-child {
+        border-top: 0;
     }
 }
 

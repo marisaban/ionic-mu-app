@@ -1,12 +1,18 @@
 /* font styling */
 @font-face{
-    font-family: 'Nunito', sans-serif;
-    src: url('../assets/fonts/nunito.woff2') format('woff2');
+    font-family: 'Assistant', sans-serif;
+    src: url('../assets/fonts/assistant.woff2') format('woff2');
 }
      
 *{
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Assistant', sans-serif;
     font-weight: lighter;
+}
+h1, h2, h3, h4, h5 {
+    font-weight: 300!important;
+}
+.text-input {
+    font-size: .8em;
 }
 // google map styling 
 #map {
