@@ -21,6 +21,9 @@ export class ModalPage {
   }
 
   ionViewDidLoad() {
+    let long  = document.getElementById("long-description");
+    long.style.display = "none";
+
     this.dataFinder.getJSONDataAsync("testData.json").then(data => {
       this.SetQueryOptionsData(data);
     });
@@ -36,7 +39,13 @@ export class ModalPage {
   }
 
   showDetails(){
-    console.log("show");
+    let short = document.getElementById("short-description");
+    let long  = document.getElementById("long-description");
+    let link  = document.getElementById("details");
+
+    short.style.display = "none";
+    long.style.display  = "block";
+    link.style.display  = "none";
   }
 
   openJobDescription(){

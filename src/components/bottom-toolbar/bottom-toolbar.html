@@ -12,11 +12,14 @@
           </div>
           <div class="job-details">
               Time: {{ minutes }}:{{ seconds }}:{{ milliseconds }} | Miles: {{ miles }}
+              <p id="timer">
+              </p>
+              
           </div>
       </ion-col>
       <ion-col col-2 offset-4>
           <div class="buttons">
-              <ion-icon class="play" name="play" (click)="startTimer();"></ion-icon>
+              <ion-icon class="play" name="play" (click)="timer();"></ion-icon>
               <ion-icon class="stop" name="pause" (click)="stopTimer();"></ion-icon>       
           </div>
       </ion-col>

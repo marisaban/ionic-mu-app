@@ -25,18 +25,4 @@ export class BottomToolbarComponent {
     return val > 9 ? val : "0" + val;
   }
 
-  startTimer(){
-    // const timer = setInterval(function(){
-    //   this.seconds = pad(++sec % 60);
-    //   this.minutes = pad(parseInt(sec / 60, 10));
-    // }, 1000);
-    console.log("start timer");
-  }
-
-
-
-  stopTimer(){
-    console.log("stop timer");
-  }
-
 }

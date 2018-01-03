@@ -6,6 +6,27 @@ page-job-details {
         .description p {
             line-height: 20px;
         }
+        .btn {
+            background: #fdb614;
+            color: #404040;
+            width: 100%;
+            display: inline-block;
+            line-height: 1;
+            font-size: 14px;
+            letter-spacing: -0.035em;
+            cursor: pointer;
+            padding: 17px 20px;
+            position: relative;
+            z-index: 2;
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+        }
+        .download {
+            margin-right: 3px;
+            font-size: 20px;
+        }
+        .download-btn.col {
+            padding-bottom: 20px;
+        }
     }
     ion-footer{
         position: relative;

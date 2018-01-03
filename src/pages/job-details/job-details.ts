@@ -33,12 +33,6 @@ export class JobDetailsPage {
 
     this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
 
-    let marker = new google.maps.Marker({
-      position: latLng,
-      map: this.map,
-      title: 'Hello World!'
-    });
-
   }
 
   clickMe(){
