@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
-import { DashboardPage } from '../dashboard/dashboard';
+import { ReturnUserPage } from '../return-user/return-user';
 import { SignUpPage } from '../sign-up/sign-up';
 
 
@@ -10,15 +10,15 @@ import { SignUpPage } from '../sign-up/sign-up';
   templateUrl: 'login.html'
 })
 export class LoginPage {
-  dashboardPage = DashboardPage;
+  returnUser = ReturnUserPage;
   signupPage = SignUpPage;
 
   constructor(public navCtrl: NavController) {
     
   }
 
-  launchPage(){
-    this.navCtrl.setRoot(DashboardPage);
+  launchReturnUser(){
+    this.navCtrl.setRoot(ReturnUserPage);
   }
 
   launchSignUp(){

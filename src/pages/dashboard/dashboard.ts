@@ -30,8 +30,9 @@ export class DashboardPage {
 
     let mapOptions = {
       center: latLng,
-      zoom: 12,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
+      zoom: 13,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      disableDefaultUI: true
     };
 
     this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);

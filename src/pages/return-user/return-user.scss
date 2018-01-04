@@ -1,0 +1,38 @@
+page-return-user {
+    ion-grid {
+        height: 100%;
+        justify-content: space-around;
+    }
+    ion-item.item {
+        margin: 15px 0;
+    }
+    ion-row {
+        margin: 15px;
+    }
+    ion-row.sign-up {
+        margin-top: 75px;
+    }
+    ion-row.sign-up.row {
+        margin-top: 150px;
+        p {
+            text-align: right;
+        }
+    }
+    .social{
+        display: block;
+        p { 
+            float: left;
+        }
+    }
+    .next {
+        float: right;
+        font-size: 2.5em;
+        margin-right: 10px;
+        ion-icon {
+            color: #fdb614;
+        }
+    }
+    .login-details {
+        padding-bottom: 10px;
+    }
+}

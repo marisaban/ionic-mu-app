@@ -1,11 +1,30 @@
-ion-navbar {
-    ion-icon {
-        &.myModal {
-            float: right;
-            padding: 10px;
-            font-size: 3.3rem;
-            color: #fdb614;
+page-dashboard {
+    ion-navbar {
+        ion-icon {
+            &.myModal {
+                float: right;
+                padding: 10px;
+                font-size: 3.3rem;
+                color: #fdb614;
+                text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+            }
         }
     }
+    .toolbar-background-ios {
+        background: transparent;
+    }
+    .bar-button-default-ios {
+        color: #404040;
+    }
+    .toolbar-background-md {
+        background: transparent;
+    }
+    #map {
+        position: absolute;
+        z-index: -1;
+    }
 }
+
+
+
 

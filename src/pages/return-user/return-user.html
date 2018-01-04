@@ -1,0 +1,31 @@
+<ion-content class="bg-img">
+    <ion-grid>
+        <ion-row padding>
+            <ion-col class="logo" col-12>
+                <ion-list class="login-details">
+                        <h3>Welcome Back</h3>
+                  <ion-item class="field">
+                    <ion-input type="text" placeholder="Enter your email address"></ion-input>
+                  </ion-item>
+                </ion-list>
+                <ion-list class="login-details">
+              <ion-item class="field">
+                <ion-input type="text" placeholder="Enter your password"></ion-input>
+              </ion-item>
+            </ion-list>
+            </ion-col>
+        </ion-row>
+        <ion-row padding class="sign-up">
+            <ion-col col-sm-6>
+                <div class="social">
+                  <p><a>I forgot my password</a></p>
+                </div>
+            </ion-col>
+            <ion-col col-sm-6>
+                <div class="next">
+                  <ion-icon name="arrow-dropright-circle" (click)="launchDashboard()"></ion-icon>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

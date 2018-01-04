@@ -11,6 +11,7 @@ import { MatchingPage } from '../pages/matching-jobs/matching-jobs';
 import { HistoryPage } from '../pages/job-history/job-history';
 import { WorkPage } from '../pages/work-logs/work-logs';
 import { ModalPage } from '../pages/modal/modal';
+import { ReturnUserPage } from '../pages/return-user/return-user';
 import { SignUpPage } from '../pages/sign-up/sign-up';
 import { EmailSignupPage } from '../pages/email-signup/email-signup';
 import { BuildProfilePage } from '../pages/build-profile/build-profile';
@@ -37,6 +38,7 @@ import { ItemApi } from '../providers/item-api';
     HistoryPage,
     WorkPage,
     ModalPage,
+    ReturnUserPage,
     SignUpPage,
     EmailSignupPage,
     BuildProfilePage,
@@ -60,6 +62,7 @@ import { ItemApi } from '../providers/item-api';
     HistoryPage,
     WorkPage,
     SignUpPage,
+    ReturnUserPage,
     EmailSignupPage,
     ModalPage,
     BuildProfilePage,

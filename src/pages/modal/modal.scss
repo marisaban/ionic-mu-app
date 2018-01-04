@@ -27,6 +27,17 @@ page-modal {
             }
         }
     }
+    ion-icon.myModal.icon.icon-ios.ion-ios-close {
+        float: right;
+        margin: 15px;
+        font-size: 1.8em;
+    }
+    ion-icon.myModal.icon.icon-md.ion-md-close {
+        float: right;
+        margin: 15px;
+        margin-top: 15px;
+        font-size: 1.8em;
+    }
 }
 
 ion-grid {

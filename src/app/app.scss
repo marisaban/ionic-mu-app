@@ -14,10 +14,20 @@ h1, h2, h3, h4, h5 {
 .text-input {
     font-size: .8em;
 }
+a {
+    color: #fdb614;
+    text-decoration: none;
+}
 // google map styling 
 #map {
-    height: calc(100% - 55px);
+    height: 100%;
     width: 100%;
+    overflow: auto;
+    position: absolute;
+    z-index: -1;
+}
+.list-ios > .item-block:first-child {
+    border-top: 0;
 }
 /* android platform styling - md */
 ion-content {
@@ -64,10 +74,12 @@ ion-header {
         display: flex;
     }
 }
-.main-header {
-    .toolbar-background.toolbar-background-md {
-        background: #cccccc;
-    }
+// transparent toolbar for map overlay 
+.toolbar-background-md {
+    background: transparent;
+}
+.toolbar-background-ios {
+    background: transparent;
 }
 /* ios platform styling */
 ion-content {
@@ -114,6 +126,23 @@ ion-header {
         color: #000000;
     }
     .toolbar-background.toolbar-background-ios {
-        background: #cccccc;
+        background: rgba(204, 204, 204, .1);
     }
+}
+.bar-button-default-ios, .bar-button-default.bar-button-ios-default, .bar-button-clear-ios-default {
+    color: #000000;
+}
+ion-icon.myModal.icon.icon-md.ion-md-notifications {
+    float: right;
+    padding: 10px;
+    font-size: 3.3rem;
+    color: #fdb614;
+    text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+}
+ion-icon.myModal.icon.icon-ios.ion-ios-notifications {
+    float: right;
+    padding: 10px;
+    font-size: 3.3rem;
+    color: #fdb614;
+    text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
 }
