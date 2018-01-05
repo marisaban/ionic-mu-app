@@ -43,7 +43,6 @@ export class JobDetailsPage {
   openModal(){
     let myModal = this.modalCtrl.create(ModalPage);
     myModal.present();
-    console.log("fassadfsfas");
   }
 
 }

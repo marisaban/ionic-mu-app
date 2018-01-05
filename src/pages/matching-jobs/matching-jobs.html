@@ -1,69 +1,57 @@
-<ion-content>
+<ion-header class="main-header">
     <ion-navbar>
-      <button ion-button menuToggle>
-        <ion-icon name="menu"></ion-icon>
-      </button>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+          </button>
+          <ion-title>
+                <img src="/assets/img/logo3.png" class="menu-logo" >
+            </ion-title>
       <ion-icon name="notifications" class="myModal" (click)="openModal()"></ion-icon>
     </ion-navbar>
-    <ion-scroll>
+</ion-header>
+    <ion-content>
         <ion-card>
             <img src="/assets/img/map-madison.png">
-            <ion-fab right top>
-              <button ion-fab>
-                <ion-icon name="pin"></ion-icon>
-              </button>
-            </ion-fab>
           
             <ion-item>
-              <ion-icon name="football" item-start large></ion-icon>
-              <h2>Museum of Football</h2>
-              <p>11 N. Way St, Madison, WI 53703</p>
+              <h2>Budget Manager</h2>
+              <p>Star Industries</p>
             </ion-item>
           
             <ion-item>
-              <ion-icon name="wine" item-left large ></ion-icon>
-              <h2>Institute of Fine Cocktails</h2>
-              <p>14 S. Hop Avenue, Madison, WI 53703</p>
+              <h2>Geotechnical Engineering Firm</h2>
+              <p>44 Shirley Ave, West Chicago, IL, 60185</p>
             </ion-item>
           
             <ion-item>
-              <span item-left>18 min</span>
-              <span item-left>(2.6 mi)</span>
+              <p item-left>22/12/2017</p>
               <button ion-button icon-left clear item-end>
-                <ion-icon name="navigate"></ion-icon>
-                Start
+                <ion-icon name="navigate" ></ion-icon>
+                <span (click)="clickJobDetailsPage()">View</span>
               </button>
             </ion-item>
         </ion-card>
 
         <ion-card>
             <img src="/assets/img/map-madison.png">
-            <ion-fab right top>
-              <button ion-fab>
-                <ion-icon name="pin"></ion-icon>
-              </button>
-            </ion-fab>
+
           
             <ion-item>
-              <ion-icon name="football" item-start large></ion-icon>
-              <h2>Museum of Football</h2>
-              <p>11 N. Way St, Madison, WI 53703</p>
+              <h2>Project Manager</h2>
+              <p>EHD Consulting</p>
             </ion-item>
           
             <ion-item>
-              <ion-icon name="wine" item-left large ></ion-icon>
-              <h2>Institute of Fine Cocktails</h2>
-              <p>14 S. Hop Avenue, Madison, WI 53703</p>
+              <h2>Civil Engineering Firm</h2>
+              <p>1202 Charles St, West Chicago, IL, 60185</p>
             </ion-item>
           
             <ion-item>
-              <span item-left>18 min</span>
-              <span item-left>(2.6 mi)</span>
+              <p item-left>27/12/2017</p>
               <button ion-button icon-left clear item-end>
                 <ion-icon name="navigate"></ion-icon>
                 Start
               </button>
             </ion-item>
         </ion-card> 
-    </ion-scroll>
 </ion-content>

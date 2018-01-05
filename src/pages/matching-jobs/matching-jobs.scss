@@ -13,4 +13,9 @@ page-matching-jobs {
             background: transparent;
         }
     }
+    ion-content {
+        .content, .content-ios, .content-md {
+            background: #000000;
+        }
+    }
 }

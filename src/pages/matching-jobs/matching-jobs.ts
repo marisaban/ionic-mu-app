@@ -1,8 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
-import { ModalController } from 'ionic-angular';
+import { ModalController, NavController } from 'ionic-angular';
 
 import { DashboardPage } from '../dashboard/dashboard';
 import { ModalPage } from '../modal/modal';
+import { JobDetailsPage } from '../job-details/job-details';
 
 @Component({
   selector: 'page-matching',
@@ -10,9 +11,9 @@ import { ModalPage } from '../modal/modal';
 })
 export class MatchingPage {
   dashboardPage = DashboardPage;
+  jobDetailsPage = JobDetailsPage;
 
-
-  constructor(private modalCtrl: ModalController) {
+  constructor(private modalCtrl: ModalController, public navCtrl: NavController) {
     
   }
 
@@ -21,6 +22,10 @@ export class MatchingPage {
       let myModal = this.modalCtrl.create(ModalPage);
       myModal.present();
     }
+
+  clickJobDetailsPage(){
+    this.navCtrl.setRoot(JobDetailsPage);
+  }
 
 
 }
