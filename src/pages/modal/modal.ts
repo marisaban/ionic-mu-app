@@ -51,5 +51,6 @@ export class ModalPage {
   openJobDescription(){
     this.navCtrl.setRoot(JobDetailsPage);
   }
+  
 
 }

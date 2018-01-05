@@ -21,8 +21,9 @@ export class LoginPage {
     this.navCtrl.setRoot(ReturnUserPage);
   }
 
+
   launchSignUp(){
-    this.navCtrl.setRoot(SignUpPage);
+    this.navCtrl.push(SignUpPage);
   }
 
 }

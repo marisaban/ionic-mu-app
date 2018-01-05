@@ -1,8 +1,6 @@
 <ion-header class="main-header">
     <ion-navbar>
-      <button ion-button menuToggle click="clickMe()">
-        <ion-icon name="menu"></ion-icon>
-      </button>
+      <ion-icon name="arrow-back" class="backpage" (click)="goBack();"></ion-icon>
       <ion-icon name="notifications" class="myModal" (click)="openModal()"></ion-icon>
       <ion-title>
           <img src="/assets/img/logo3.png" class="menu-logo" >

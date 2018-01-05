@@ -45,4 +45,8 @@ export class JobDetailsPage {
     myModal.present();
   }
 
+  goBack(){
+    this.navCtrl.pop();
+  }
+
 }

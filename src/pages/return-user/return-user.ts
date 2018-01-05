@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DashboardPage } from '../dashboard/dashboard';
+import { LoginPage } from '../login/login';
 
 @IonicPage()
 @Component({
@@ -16,6 +17,10 @@ export class ReturnUserPage {
 
   launchDashboard(){
     this.navCtrl.setRoot(DashboardPage);
+  }
+
+  goBack(){
+    this.navCtrl.setRoot(LoginPage);
   }
 
 }

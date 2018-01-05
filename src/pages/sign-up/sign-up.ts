@@ -23,5 +23,9 @@ export class SignUpPage {
     this.navCtrl.setRoot(EmailSignupPage);
   }
 
+  goBack(){
+    this.navCtrl.pop();
+  }
+
 }
 

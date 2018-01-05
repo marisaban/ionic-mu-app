@@ -21,4 +21,8 @@ export class EmailSignupPage {
     this.navCtrl.setRoot(BuildProfilePage);
   }
 
+  goBack(){
+    this.navCtrl.pop();
+  }
+
 }
