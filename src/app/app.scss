@@ -21,7 +21,7 @@ a {
 // google map styling 
 #map {
     // height: 100%;
-    height: calc(100% - 55px);
+    height: 100%;
     width: 100%;
     overflow: auto;
     position: absolute;
@@ -74,6 +74,9 @@ ion-header {
         color: #fff;
         display: flex;
     }
+}
+.bar-button-default-md {
+    color: #cccccc;
 }
 // transparent toolbar for map overlay 
 .toolbar-background-md {

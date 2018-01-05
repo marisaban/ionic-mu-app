@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { ModalController } from 'ionic-angular';
+import { ModalController, NavController } from 'ionic-angular';
 
 import { DashboardPage } from '../dashboard/dashboard';
+import { JobDetailsPage } from '../job-details/job-details';
 import { ModalPage } from '../modal/modal';
 
 
@@ -12,48 +13,37 @@ import { ModalPage } from '../modal/modal';
 export class HistoryPage {
   dashboardPage = DashboardPage;
 
-  jobs: any = [];
   items: any = [];
-  itemExpandHeight: number = 200;
 
-  constructor(private modalCtrl: ModalController) {
-    this.jobs = [
-        { expanded: false },
-        { expanded: false },
-        { expanded: false },
-        { expanded: false }
-    ]
+  constructor(private modalCtrl: ModalController, public navCtrl: NavController) {   
 
     this.items = [
-      { expanded: false },
-      { expanded: false },
-      { expanded: false },
-      { expanded: false }
-  ]
+      { title: 'item1' },
+      { title: 'item2' },
+      { title: 'item3' },
+      { title: 'item4' }
+    ]
   }
 
-  expandJob(job){
-    if(job.expanded === true){
-      job.expanded = false;
-    }else {
-      job.expanded = true;
+  removeItem(item){
+ 
+    for(let i = 0; i < this.items.length; i++) {
+ 
+      if(this.items[i] == item){
+        this.items.splice(i, 1);
+      }
+ 
     }
-    
-  }
-
-  expandItem(item){
-    if(item.expanded === true){
-      item.expanded = false;
-    }else {
-      item.expanded = true;
-    }
-    
+ 
   }
 
   openModal(){
-    
-      let myModal = this.modalCtrl.create(ModalPage);
-      myModal.present();
-    }
+    let myModal = this.modalCtrl.create(ModalPage);
+    myModal.present();
+  }
+
+  clickJobDetailsPage(){
+    this.navCtrl.setRoot(JobDetailsPage);
+  }
 
 }

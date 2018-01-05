@@ -31,5 +31,16 @@ ion-content {
             }
         }
     }
+    .list-ios ion-item-sliding {
+        background-color: #fff;
+        border-bottom: 1px solid #cccccc;
+    }
+    .list-md ion-item-sliding {
+        background-color: #fff;
+        border-bottom: 1px solid #cccccc;
+    }
+    button.danger {
+        background: red;
+    }
 }
 

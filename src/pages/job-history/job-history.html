@@ -16,64 +16,50 @@
             <h1>Job History</h1>
         </ion-col>
     </ion-row>
-    <ion-row>
-        <ion-col col-6 class="job-header">
-            <h3>Position</h3>
-          </ion-col>
-          <ion-col col-6 class="job-header">
-            <h3>Location</h3>
-          </ion-col>
-    </ion-row>
-<!-- Job postings start here -->
-    <ion-row (click)="expandJob(job)" *ngFor="let job of jobs">
-      <ion-col col-6 class="job-title">
-        <p>Accountant</p>
-        <expandable [expandHeight]="itemExpandHeight" [expanded]="job.expanded">
-            <ion-row class="info">
-                <ion-col col-12>
-                    <p>Start Date 2017/07/25</p>
-                </ion-col>
-                <ion-col col-12>
-                    <p>End Date 2017/12/25</p>
-                </ion-col>
-                <ion-col col-12>
-                    <p>Salary $170,750</p>
-                </ion-col>
-                <ion-col col-12>
-                    <p>Extn. 8422</p>
-                </ion-col>
-            </ion-row>
-        </expandable>
-      </ion-col>
-      <ion-col col-6 class="job-location">
-          <p>Tokyo</p>
-      </ion-col>
-    </ion-row>
+    <ion-card>
+            <img src="/assets/img/map.png">
+          
+            <ion-item>
+              <h2>Budget Manager</h2>
+              <p>Star Industries</p>
+            </ion-item>
+          
+            <ion-item>
+              <h2>Geotechnical Engineering Firm</h2>
+              <p>44 Shirley Ave, West Chicago, IL, 60185</p>
+            </ion-item>
+          
+            <ion-item>
+              <p item-left>05/10/2017</p>
+              <button ion-button icon-left clear item-end>
+                <ion-icon name="navigate" ></ion-icon>
+                <span (click)="clickJobDetailsPage()">View</span>
+              </button>
+            </ion-item>
+        </ion-card>
 
-    <ion-row (click)="expandItem(item)" *ngFor="let item of items">
-        <ion-col col-6 class="job-title">
-        <p class="position-title">Integration Specialist</p>
-        <expandable [expandHeight]="itemExpandHeight" [expanded]="item.expanded">
-                <ion-row class="info">
-                    <ion-col col-12>
-                        <p>Start Date 2017/07/25</p>
-                    </ion-col>
-                    <ion-col col-12>
-                        <p>End Date 2017/12/25</p>
-                    </ion-col>
-                    <ion-col col-12>
-                        <p>Salary $170,750</p>
-                    </ion-col>
-                    <ion-col col-12>
-                        <p>Extn. 8422</p>
-                    </ion-col>
-                </ion-row>
-        </expandable>
-        </ion-col>
-        <ion-col col-6 class="job-location">
-            <p>New York</p>
-        </ion-col>
-    </ion-row>
+        <ion-card>
+            <img src="/assets/img/map.png">
+
+          
+            <ion-item>
+              <h2>Project Manager</h2>
+              <p>EHD Consulting</p>
+            </ion-item>
+          
+            <ion-item>
+              <h2>Civil Engineering Firm</h2>
+              <p>1202 Charles St, West Chicago, IL, 60185</p>
+            </ion-item>
+          
+            <ion-item>
+              <p item-left>15/08/2017</p>
+              <button ion-button icon-left clear item-end>
+                <ion-icon name="navigate"></ion-icon>
+                Start
+              </button>
+            </ion-item>
+        </ion-card>
     </ion-grid>
 </ion-content>
 
