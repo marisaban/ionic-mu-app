@@ -49,7 +49,7 @@ export class ModalPage {
   }
 
   openJobDescription(){
-    this.navCtrl.setRoot(JobDetailsPage);
+    this.navCtrl.push(JobDetailsPage);
   }
   
 

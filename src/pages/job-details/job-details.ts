@@ -1,6 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, ModalController, NavController } from 'ionic-angular';
 import { ModalPage } from '../modal/modal';
+import { MatchingPage } from '../matching-jobs/matching-jobs';
+import { DashboardPage } from '../dashboard/dashboard';
 
 declare var google;
 
@@ -34,15 +36,6 @@ export class JobDetailsPage {
 
     this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
 
-  }
-
-  clickMe(){
-    console.log("hi");
-  }
-
-  openModal(){
-    let myModal = this.modalCtrl.create(ModalPage);
-    myModal.present();
   }
 
   goBack(){

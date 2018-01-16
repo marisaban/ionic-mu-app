@@ -14,9 +14,4 @@ export class ExpandableComponent {
     
   }
 
-  ngAfterViewInit(){
-    console.log(this.expanded);
-    console.log(this.expandHeight);
-  }
-
 }

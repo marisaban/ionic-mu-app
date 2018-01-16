@@ -24,7 +24,7 @@ export class MatchingPage {
     }
 
   clickJobDetailsPage(){
-    this.navCtrl.setRoot(JobDetailsPage);
+    this.navCtrl.push(JobDetailsPage);
   }
 
 

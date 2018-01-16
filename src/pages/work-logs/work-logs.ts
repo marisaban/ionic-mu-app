@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ModalController } from 'ionic-angular';
+import { ModalController, NavController } from 'ionic-angular';
 
 import { ModalPage } from '../modal/modal';
 
@@ -11,15 +11,24 @@ import { ModalPage } from '../modal/modal';
 export class WorkPage {
 
   items: any = [];
+  months: any = [];
   itemExpandHeight: number = 100;
 
-  constructor(private modalCtrl: ModalController) {
+  constructor(private modalCtrl: ModalController, public navCtrl: NavController) {
     this.items = [
       { expanded: false },
       { expanded: false },
       { expanded: false },
       { expanded: false }
-  ]
+  ], 
+    this.months = [
+                  "Jan", "Feb", "Mar", "April", "May", "June", 
+                  "July", "Aug", "Sept", "Oct", "Nov", "Dec"
+                  ];
+  }
+
+  ionViewDidLoad(months){
+    console.log(this.months[3]); 
   }
 
   expandItem(item){
@@ -32,8 +41,7 @@ export class WorkPage {
   }
 
   openModal(){
-    let myModal = this.modalCtrl.create(ModalPage);
-    myModal.present();
+    this.navCtrl.push(ModalPage);
   }
 
 }

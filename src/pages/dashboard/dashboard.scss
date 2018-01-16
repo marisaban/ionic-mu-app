@@ -1,5 +1,8 @@
 page-dashboard {
     ion-navbar {
+        .hamburger-menu {
+            color: #404040;
+        }
         ion-icon {
             &.myModal {
                 float: right;

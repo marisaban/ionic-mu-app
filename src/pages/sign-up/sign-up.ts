@@ -16,11 +16,11 @@ export class SignUpPage {
   }
 
   launchPage(){
-    this.navCtrl.setRoot(LoginPage);
+    this.navCtrl.push(LoginPage);
   }
 
   launchEmailSignUp(){
-    this.navCtrl.setRoot(EmailSignupPage);
+    this.navCtrl.push(EmailSignupPage);
   }
 
   goBack(){

@@ -18,4 +18,8 @@ export class BuildProfilePage {
     this.navCtrl.setRoot(DashboardPage);
   }
 
+  goBack(){
+    this.navCtrl.pop();
+  }
+
 }

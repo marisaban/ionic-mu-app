@@ -30,6 +30,7 @@ a {
 .list-ios > .item-block:first-child {
     border-top: 0;
 }
+
 /* android platform styling - md */
 ion-content {
     &.side-menu {
@@ -136,6 +137,7 @@ ion-header {
 .bar-button-default-ios, .bar-button-default.bar-button-ios-default, .bar-button-clear-ios-default {
     color: #000000;
 }
+/* icon */
 ion-icon.myModal.icon.icon-md.ion-md-notifications {
     float: right;
     padding: 10px;
@@ -149,4 +151,7 @@ ion-icon.myModal.icon.icon-ios.ion-ios-notifications {
     font-size: 3.3rem;
     color: #fdb614;
     text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+}
+span.back-button-text.back-button-text-ios, span.back-button-text.back-button-text-md {
+    display: none;
 }

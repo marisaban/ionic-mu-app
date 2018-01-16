@@ -13,37 +13,16 @@ import { ModalPage } from '../modal/modal';
 export class HistoryPage {
   dashboardPage = DashboardPage;
 
-  items: any = [];
-
   constructor(private modalCtrl: ModalController, public navCtrl: NavController) {   
 
-    this.items = [
-      { title: 'item1' },
-      { title: 'item2' },
-      { title: 'item3' },
-      { title: 'item4' }
-    ]
-  }
-
-  removeItem(item){
- 
-    for(let i = 0; i < this.items.length; i++) {
- 
-      if(this.items[i] == item){
-        this.items.splice(i, 1);
-      }
- 
-    }
- 
   }
 
   openModal(){
-    let myModal = this.modalCtrl.create(ModalPage);
-    myModal.present();
+    this.navCtrl.push(ModalPage);
   }
 
   clickJobDetailsPage(){
-    this.navCtrl.setRoot(JobDetailsPage);
+    this.navCtrl.push(JobDetailsPage);
   }
 
 }

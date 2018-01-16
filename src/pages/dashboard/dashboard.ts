@@ -71,8 +71,7 @@ export class DashboardPage {
   }
 
   openModal(){
-    let myModal = this.modalCtrl.create(ModalPage);
-    myModal.present();
+    this.navCtrl.push(ModalPage);
   }
 
 }
