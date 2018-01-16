@@ -152,6 +152,22 @@ ion-icon.myModal.icon.icon-ios.ion-ios-notifications {
     color: #fdb614;
     text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
 }
+
+/* log hours on work log page */
+ion-icon.myModal.icon.icon-md.ion-md-add {
+    float: right;
+    padding: 10px;
+    font-size: 3.3rem;
+    color: #000;
+    text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+}
+ion-icon.myModal.icon.icon-ios.ion-ios-add {
+    float: right;
+    padding: 10px;
+    font-size: 3.3rem;
+    color: #000;
+    text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+}
 span.back-button-text.back-button-text-ios, span.back-button-text.back-button-text-md {
     display: none;
 }

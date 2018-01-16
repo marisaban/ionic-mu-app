@@ -21,6 +21,29 @@ ion-row {
     }
 }
 ion-content {
+    ion-card.months-worked {
+        position: relative;
+        text-align: center;
+        height: 150px;
+      }
+    
+      .card-title {
+        position: absolute;
+        top: 36%;
+        font-size: 2.2em;
+        width: 100%;
+        font-weight: bold;
+        color: #fff;
+      }
+    
+      .card-subtitle {
+        font-size: 1.2em;
+        font-weight: bold;
+        position: absolute;
+        top: 60%;
+        width: 100%;
+        color: #fff;
+      }
     h1 {
         text-align: center;
     }

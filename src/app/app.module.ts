@@ -16,6 +16,7 @@ import { SignUpPage } from '../pages/sign-up/sign-up';
 import { EmailSignupPage } from '../pages/email-signup/email-signup';
 import { BuildProfilePage } from '../pages/build-profile/build-profile';
 import { JobDetailsPage } from '../pages/job-details/job-details';
+import { LogHoursPage } from '../pages/log-hours/log-hours';
 
 //custom component
 import { SubNavComponent } from '../components/sub-nav/sub-nav';
@@ -43,6 +44,7 @@ import { ItemApi } from '../providers/item-api';
     EmailSignupPage,
     BuildProfilePage,
     JobDetailsPage,
+    LogHoursPage,
     SubNavComponent,
     ExpandableComponent,
     BottomToolbarComponent
@@ -66,7 +68,8 @@ import { ItemApi } from '../providers/item-api';
     EmailSignupPage,
     ModalPage,
     BuildProfilePage,
-    JobDetailsPage
+    JobDetailsPage,
+    LogHoursPage
   ],
   providers: [
     StatusBar,

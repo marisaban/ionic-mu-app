@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { ModalController, NavController } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
 
-import { ModalPage } from '../modal/modal';
+import { LogHoursPage } from '../log-hours/log-hours';
+
 
 
 @Component({
@@ -10,25 +11,33 @@ import { ModalPage } from '../modal/modal';
 })
 export class WorkPage {
 
-  items: any = [];
+  logHoursPage = LogHoursPage;
   months: any = [];
+
+  items: any = [];
   itemExpandHeight: number = 100;
 
-  constructor(private modalCtrl: ModalController, public navCtrl: NavController) {
+  constructor(public navCtrl: NavController) {
     this.items = [
       { expanded: false },
       { expanded: false },
       { expanded: false },
       { expanded: false }
   ], 
-    this.months = [
-                  "Jan", "Feb", "Mar", "April", "May", "June", 
-                  "July", "Aug", "Sept", "Oct", "Nov", "Dec"
-                  ];
-  }
-
-  ionViewDidLoad(months){
-    console.log(this.months[3]); 
+  this.months = [
+    { month: 'January', hours: 41, image: '/assets/img/january.png' },
+    { month: 'February', hours: 20, image: '/assets/img/january.png'},
+    { month: 'March', hours: 10, image: '/assets/img/march.jpg'},
+    { month: 'April', hours: 5, image: '/assets/img/april.jpg'},
+    { month: 'May', hours: 40, image: '/assets/img/may.jpg'},
+    { month: 'June', hours: 15, image: '/assets/img/january.png'},
+    { month: 'July', hours: 22, image: '/assets/img/january.png'},
+    { month: 'August', hours: 13, image: '/assets/img/august.jpg'},
+    { month: 'September', hours: 5, image: '/assets/img/september.jpg'},
+    { month: 'October', hours: 20, image: '/assets/img/october.jpg'},
+    { month: 'November', hours: 35, image: '/assets/img/january.png'},
+    { month: 'December', hours: 15, image: '/assets/img/december.jpg'}
+  ];
   }
 
   expandItem(item){
@@ -40,8 +49,8 @@ export class WorkPage {
     
   }
 
-  openModal(){
-    this.navCtrl.push(ModalPage);
+  launchPage(){
+    this.navCtrl.push(LogHoursPage);
   }
 
 }
