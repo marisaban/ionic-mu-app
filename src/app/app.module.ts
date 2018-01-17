@@ -2,8 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
+
 // import { DatePicker} from '@ionic-native/datepicker';
 import { HttpModule } from '@angular/http';
+import { NgCalendarModule  } from 'ionic2-calendar';
 
 import { LoginPage } from '../pages/login/login';
 import { DashboardPage } from '../pages/dashboard/dashboard';
@@ -17,6 +19,7 @@ import { EmailSignupPage } from '../pages/email-signup/email-signup';
 import { BuildProfilePage } from '../pages/build-profile/build-profile';
 import { JobDetailsPage } from '../pages/job-details/job-details';
 import { LogHoursPage } from '../pages/log-hours/log-hours';
+import { EventModalPage } from '../pages/event-modal/event-modal';
 
 //custom component
 import { SubNavComponent } from '../components/sub-nav/sub-nav';
@@ -50,6 +53,7 @@ import { ItemApi } from '../providers/item-api';
     BottomToolbarComponent
     ],
   imports: [
+    NgCalendarModule,
     BrowserModule,
     HttpModule,
     ReactiveFormsModule,

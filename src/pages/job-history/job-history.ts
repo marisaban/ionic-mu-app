@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ModalController, NavController } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
 
 import { DashboardPage } from '../dashboard/dashboard';
 import { JobDetailsPage } from '../job-details/job-details';
@@ -13,7 +13,7 @@ import { ModalPage } from '../modal/modal';
 export class HistoryPage {
   dashboardPage = DashboardPage;
 
-  constructor(private modalCtrl: ModalController, public navCtrl: NavController) {   
+  constructor(public navCtrl: NavController) {   
 
   }
 

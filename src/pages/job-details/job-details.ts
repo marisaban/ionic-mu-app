@@ -1,8 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, ModalController, NavController } from 'ionic-angular';
-import { ModalPage } from '../modal/modal';
-import { MatchingPage } from '../matching-jobs/matching-jobs';
-import { DashboardPage } from '../dashboard/dashboard';
+import { IonicPage, NavController } from 'ionic-angular';
 
 declare var google;
 
@@ -16,7 +13,7 @@ export class JobDetailsPage {
   @ViewChild('map')  mapElement;
   map: any;
 
-  constructor(private modalCtrl: ModalController, public navCtrl: NavController) {
+  constructor(public navCtrl: NavController) {
   }
 
   ionViewDidLoad(){
