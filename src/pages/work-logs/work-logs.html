@@ -10,9 +10,15 @@
         </ion-navbar>
       </ion-header>
 <ion-content>
-    <ion-card class="months-worked" *ngFor="let month of months">
+    <!-- <ion-card class="months-worked" *ngFor="let month of months">
         <img src="{{month.image}}">
         <div class="card-title">  {{month.month}} </div>
         <div class="card-subtitle"> {{month.hours}} hours </div>
-    </ion-card>
+    </ion-card> -->
+
+    <ion-list>
+            <ion-item *ngFor="let item of items">
+              {{ item.title }} hello
+            </ion-item>
+    </ion-list>
 </ion-content>

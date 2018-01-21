@@ -3,7 +3,6 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-// import { DatePicker} from '@ionic-native/datepicker';
 import { HttpModule } from '@angular/http';
 import { NgCalendarModule  } from 'ionic2-calendar';
 

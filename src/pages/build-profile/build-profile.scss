@@ -25,7 +25,7 @@ page-build-profile {
     .list-ios > .item-block:first-child {
         border-top: 0;
     }
-    ion-icon.avatar {
+    ion-icon.camera {
         display: block;
         font-size: 5rem;
     }
@@ -42,5 +42,9 @@ page-build-profile {
     }
     .user-avatar {
         text-align: center;
+        border-radius: 100%;
+        border: 1px solid black;
+        width: 60px;
+        margin: 0 auto;
     }
 }
