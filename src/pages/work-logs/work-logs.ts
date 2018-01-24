@@ -35,9 +35,6 @@ export class WorkPage {
         }      
     });
 
-
-
-
     this.items = [
       { expanded: false },
       { expanded: false },

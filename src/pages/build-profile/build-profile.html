@@ -10,10 +10,14 @@
       </ion-row>
       <ion-row>
         <ion-col col-12 class="col-user-avatar">
-          <div class="user-avatar">
-              <ion-icon class="camera" name="camera"></ion-icon>
+          <div class="user-avatar" *ngIf="!base64Image">
+              <ion-icon class="camera" name="camera" (click)="takePhoto()"></ion-icon>
+          </div>
+          <div class="user-upload">
+              <img [src]="base64Image" class="user-image" *ngIf="base64Image"/>
           </div>
         </ion-col>
+        
       </ion-row>
 
   <form>

@@ -5,6 +5,7 @@ import { MyApp } from './app.component';
 
 import { HttpModule } from '@angular/http';
 import { NgCalendarModule  } from 'ionic2-calendar';
+import { Camera } from '@ionic-native/camera';
 
 import { LoginPage } from '../pages/login/login';
 import { DashboardPage } from '../pages/dashboard/dashboard';
@@ -31,6 +32,10 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { DataFinder } from '../providers/datafinder';
 import { ItemApi } from '../providers/item-api';
+import { AuthServiceProvider } from '../providers/auth-service/auth-service';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -56,6 +61,7 @@ import { ItemApi } from '../providers/item-api';
     BrowserModule,
     HttpModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
@@ -79,7 +85,9 @@ import { ItemApi } from '../providers/item-api';
     SplashScreen,
     DataFinder,
     ItemApi,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    Camera,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AuthServiceProvider
   ]
 })
 export class AppModule {}
