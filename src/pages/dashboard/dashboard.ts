@@ -57,6 +57,10 @@ export class DashboardPage {
       content: contentString
     });
 
+    this.map.addListener('click', () => {
+      infowindow.close(this.map);
+    });
+
     let marker = new google.maps.Marker({
       position: latLng,
       map: this.map,
