@@ -3,7 +3,7 @@
 </ion-header>
 <ion-content class="bg-img">
     <ion-grid>
-        <ion-row padding>
+        <ion-row padding class="enter-email" *ngIf="!isLoggedIn"> 
             <ion-col class="logo" col-12>
                 <ion-list class="login-details">
                         <h3>Enter your email address</h3>
@@ -15,8 +15,29 @@
         </ion-row>
         <ion-row padding class="sign-up">
             <ion-col col-sm-6>
+        <!-- facebook login -->
               <div class="social">
-                <p>Connect with Facebook</p>
+                <div *ngIf="isLoggedIn; else facebookLogin">
+                    <h3>Hi, {{users.name}} </h3>
+                    <p> ({{users.email}}) </p>
+                    <p>
+                    <img src="{{users.picture.data.url}}" width="100" alt="{{users.name}}" />
+                    </p>
+                    <p>
+                    <button ion-button icon-right (click)="logout()">
+                        Logout
+                    </button>
+                    </p>
+                </div>
+                <div *ngIf="!isLoggedIn">
+                <ng-template #facebookLogin>
+                        <button ion-button icon-right (click)="login()">
+                        Login with
+                        <ion-icon name="logo-facebook"></ion-icon>
+                        </button>
+                    </ng-template>
+                    <p (click)="login()"  *ngIf="!isLoggedIn">Connect with Facebook</p>
+                </div>
               </div>
             </ion-col>
             <ion-col col-sm-6>

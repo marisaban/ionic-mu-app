@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
 import { DashboardPage } from '../dashboard/dashboard';
 import { Camera, CameraOptions } from '@ionic-native/camera';
-import { trigger, state, style, transition, animate } from '@angular/animations'
 
 @Component({
   selector: 'page-build-profile',

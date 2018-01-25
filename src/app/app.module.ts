@@ -6,6 +6,7 @@ import { MyApp } from './app.component';
 import { HttpModule } from '@angular/http';
 import { NgCalendarModule  } from 'ionic2-calendar';
 import { Camera } from '@ionic-native/camera';
+import { Facebook } from '@ionic-native/facebook';
 
 import { LoginPage } from '../pages/login/login';
 import { DashboardPage } from '../pages/dashboard/dashboard';
@@ -86,6 +87,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     DataFinder,
     ItemApi,
     Camera,
+    Facebook,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthServiceProvider
   ]
