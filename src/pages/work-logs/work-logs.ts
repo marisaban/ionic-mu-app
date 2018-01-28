@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
-import { Http } from '@angular/http';
-import 'rxjs/add/operator/map'
-
 import { LogHoursPage } from '../log-hours/log-hours';
+
 
 
 @Component({
@@ -13,28 +11,13 @@ import { LogHoursPage } from '../log-hours/log-hours';
 })
 export class WorkPage {
 
-  items2: Array<{title: string}>;
-
-  posts: any;
-
   logHoursPage = LogHoursPage;
   months: any = [];
 
   items: any = [];
   itemExpandHeight: number = 100;
 
-  constructor(public navCtrl: NavController, public http: Http) {
-
-    this.http.get('/api').map(res => res.json()).subscribe(data => {
-        console.log(data.jobs.id);
-        this.items2 = [];
-        for(let i = 0; i <66; i++){
-          this.items2.push({
-            title: data.jobs.id          
-          });
-        }      
-    });
-
+  constructor(public navCtrl: NavController) {
     this.items = [
       { expanded: false },
       { expanded: false },

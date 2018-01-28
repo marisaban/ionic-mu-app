@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, AlertController } from 'ionic-angular';
+import { NavController} from 'ionic-angular';
 import { DashboardPage } from '../dashboard/dashboard';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 
@@ -14,7 +14,7 @@ export class BuildProfilePage {
 
   dashboardPage    = DashboardPage;
 
-  constructor(public navCtrl: NavController, private camera: Camera, private alertCtrl: AlertController ) {
+  constructor(public navCtrl: NavController, private camera: Camera) {
   }
 
   ngOnInit(){

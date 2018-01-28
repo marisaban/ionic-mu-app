@@ -20,7 +20,6 @@ import { EmailSignupPage } from '../pages/email-signup/email-signup';
 import { BuildProfilePage } from '../pages/build-profile/build-profile';
 import { JobDetailsPage } from '../pages/job-details/job-details';
 import { LogHoursPage } from '../pages/log-hours/log-hours';
-import { EventModalPage } from '../pages/event-modal/event-modal';
 
 //custom component
 import { SubNavComponent } from '../components/sub-nav/sub-nav';
