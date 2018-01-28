@@ -76,6 +76,11 @@ export class DashboardPage {
       this.closeAllInfoWindows();
       infoWindow.open(this.map, marker);
     });
+    this.map.addListener('click', () => {
+      for(let window of this.infoWindows) {
+        window.close();
+      }
+    });
     this.infoWindows.push(infoWindow);
     
   }
