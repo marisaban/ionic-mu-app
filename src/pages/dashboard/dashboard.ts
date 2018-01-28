@@ -1,5 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import {  NavController, ViewController } from 'ionic-angular';
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/map';
 
 //pages 
 import { ModalPage } from '../modal/modal';
@@ -13,65 +15,75 @@ declare var google;
 })
 export class DashboardPage {
 
-  @ViewChild('map') mapElement;
+  @ViewChild('map') mapContainer;
   map: any;
+  infoWindows: any;
 
-  constructor (public navCtrl: NavController, public viewCtrl: ViewController) {
-
+  constructor(public navCtrl: NavController, public http: Http) {
+    this.infoWindows = [];
   }
 
-  ionViewDidLoad(){
-    this.initMap();
+  ionViewWillEnter() {
+    this.displayGoogleMap();
+    this.getMarkers();
   }
 
-  initMap(){
-
+  displayGoogleMap() {
     let latLng = new google.maps.LatLng(40.795430, -73.961241);
 
     let mapOptions = {
       center: latLng,
+      disableDefaultUI: true,
       zoom: 13,
-      mapTypeId: google.maps.MapTypeId.ROADMAP,
-      disableDefaultUI: true
-    };
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+    this.map = new google.maps.Map(this.mapContainer.nativeElement, mapOptions);
+    
+  }
 
-    this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
-
-    const contentString = `
-    <div id="content">
-      <h4>Accounting Manager </h4>
-      <h4>Start Date</h4>
-      <p>20.09.2017</p>
-
-      <h4>End Date</h4>
-      <p>20.11.2017</p>
-
-      <h4>Description</h4>
-      <p>We are looking for a responsible Budget Manager to
-      developer our company's budget and oversee its implementation...
-      </p>
-    </div>
-    `;
-
-    let infowindow = new google.maps.InfoWindow({
-      content: contentString
+  getMarkers() {
+    this.http.get('assets/data/markers.json')
+    .map((res) => res.json())
+    .subscribe(data => {
+      this.addMarkersToMap(data);
     });
+  }
+  
 
-    this.map.addListener('click', () => {
-      infowindow.close(this.map);
+  addMarkersToMap(markers) {
+    for(let marker of markers) {
+      var position = new google.maps.LatLng(marker.latitude, marker.longitude);
+      var dogwalkMarker = new google.maps.Marker({
+        position: position,
+        title: marker.name,
+        start: marker.start,
+        end: marker.end,
+        description: marker.description,
+        icon: 'assets/img/marker.png'});
+      dogwalkMarker.setMap(this.map);
+      this.addInfoWindowToMarker(dogwalkMarker);
+    }
+  }
+
+  //add InfoWindow to markers
+  addInfoWindowToMarker(marker) {
+    var infoWindowContent = 
+    '<div id="content"><h4>' + marker.title + '</h4><h4>Start Date</h4><p>' + marker.start + '</p><h4>End Date</h4><p>' + marker.end + '</p><h4>Description</h4><p>' + marker.description + '</p></div>';
+    var infoWindow = new google.maps.InfoWindow({
+      content: infoWindowContent
     });
-
-    let marker = new google.maps.Marker({
-      position: latLng,
-      map: this.map,
-      title: 'Hello World!'
-    });
-
-    // marker.setMap(this.map);
-
     marker.addListener('click', () => {
-      infowindow.open(this.map, marker);
+      this.closeAllInfoWindows();
+      infoWindow.open(this.map, marker);
     });
+    this.infoWindows.push(infoWindow);
+    
+  }
+
+  closeAllInfoWindows() {
+    for(let window of this.infoWindows) {
+      window.close();
+    }
   }
 
   openModal(){
