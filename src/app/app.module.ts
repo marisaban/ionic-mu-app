@@ -7,6 +7,7 @@ import { HttpModule } from '@angular/http';
 import { NgCalendarModule  } from 'ionic2-calendar';
 import { Camera } from '@ionic-native/camera';
 import { Facebook } from '@ionic-native/facebook';
+import { Geolocation } from '@ionic-native/geolocation';
 
 import { LoginPage } from '../pages/login/login';
 import { DashboardPage } from '../pages/dashboard/dashboard';
@@ -87,6 +88,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ItemApi,
     Camera,
     Facebook,
+    Geolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthServiceProvider
   ]

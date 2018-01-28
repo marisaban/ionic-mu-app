@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import {  NavController} from 'ionic-angular';
+import { Geolocation, GeolocationOptions ,Geoposition ,PositionError  } from '@ionic-native/geolocation';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
@@ -14,31 +15,56 @@ declare var google;
   templateUrl: 'dashboard.html'
 })
 export class DashboardPage {
+  options : GeolocationOptions;
+  currentPos : Geoposition;
 
   @ViewChild('map') mapContainer;
   map: any;
   infoWindows: any;
 
-  constructor(public navCtrl: NavController, public http: Http) {
+  constructor(public navCtrl: NavController, public http: Http, public geolocation: Geolocation) {
     this.infoWindows = [];
   }
 
   ionViewWillEnter() {
     this.displayGoogleMap();
+    this.getUserLocation();
     this.getMarkers();
   }
 
   displayGoogleMap() {
-    let latLng = new google.maps.LatLng(40.795430, -73.961241);
+  
+      let latLng = new google.maps.LatLng(40.795430, -73.961241);
 
-    let mapOptions = {
-      center: latLng,
-      disableDefaultUI: true,
-      zoom: 13,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    }
-    this.map = new google.maps.Map(this.mapContainer.nativeElement, mapOptions);
+      let mapOptions = {
+        center: latLng,
+        disableDefaultUI: true,
+        zoom: 13,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      }
+      this.map = new google.maps.Map(this.mapContainer.nativeElement, mapOptions);
+
+      this.map.addListener('click', () => {
+        for(let window of this.infoWindows) {
+          window.close();
+        }
+      });
     
+  }
+
+  getUserLocation(){
+    this.options = {
+      enableHighAccuracy : true
+  };
+
+  this.geolocation.getCurrentPosition(this.options).then((pos : Geoposition) => {
+
+      this.currentPos = pos;      
+      console.log(pos);
+
+  },(err : PositionError)=>{
+      console.log("error : " + err.message);
+  });
   }
 
   getMarkers() {
@@ -76,11 +102,7 @@ export class DashboardPage {
       this.closeAllInfoWindows();
       infoWindow.open(this.map, marker);
     });
-    this.map.addListener('click', () => {
-      for(let window of this.infoWindows) {
-        window.close();
-      }
-    });
+
     this.infoWindows.push(infoWindow);
     
   }
