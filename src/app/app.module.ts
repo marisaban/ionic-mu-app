@@ -34,6 +34,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { DataFinder } from '../providers/datafinder';
 import { ItemApi } from '../providers/item-api';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
+import { ConnectivityService } from '../providers/connectivity-service/connectivity-service';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -89,6 +90,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     Camera,
     Facebook,
     Geolocation,
+    ConnectivityService,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthServiceProvider
   ]

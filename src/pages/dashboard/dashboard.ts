@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import {  NavController} from 'ionic-angular';
 import { Geolocation, GeolocationOptions ,Geoposition ,PositionError  } from '@ionic-native/geolocation';
+import { ConnectivityService } from '../../providers/connectivity-service/connectivity-service';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
@@ -20,9 +21,11 @@ export class DashboardPage {
 
   @ViewChild('map') mapContainer;
   map: any;
+  mapInitialised: boolean = false;
+  apiKey: any;
   infoWindows: any;
 
-  constructor(public navCtrl: NavController, public http: Http, public geolocation: Geolocation) {
+  constructor(public navCtrl: NavController, public http: Http, public geolocation: Geolocation, public connectivityService: ConnectivityService) {
     this.infoWindows = [];
   }
 
