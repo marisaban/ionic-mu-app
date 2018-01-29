@@ -40,7 +40,8 @@ export class DashboardPage {
         center: latLng,
         disableDefaultUI: true,
         zoom: 13,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        styles: [{"featureType":"landscape","stylers":[{"hue":"#FFBB00"},{"saturation":43.400000000000006},{"lightness":37.599999999999994},{"gamma":1}]},{"featureType":"road.highway","stylers":[{"hue":"#FFC200"},{"saturation":-61.8},{"lightness":45.599999999999994},{"gamma":1}]},{"featureType":"road.arterial","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":51.19999999999999},{"gamma":1}]},{"featureType":"road.local","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":52},{"gamma":1}]},{"featureType":"water","stylers":[{"hue":"#0078FF"},{"saturation":-13.200000000000003},{"lightness":2.4000000000000057},{"gamma":1}]},{"featureType":"poi","stylers":[{"hue":"#00FF6A"},{"saturation":-1.0989010989011234},{"lightness":11.200000000000017},{"gamma":1}]}]
       }
       this.map = new google.maps.Map(this.mapContainer.nativeElement, mapOptions);
 
@@ -94,7 +95,20 @@ export class DashboardPage {
   //add InfoWindow to markers
   addInfoWindowToMarker(marker) {
     var infoWindowContent = 
-    '<div id="content"><h4>' + marker.title + '</h4><h4>Start Date</h4><p>' + marker.start + '</p><h4>End Date</h4><p>' + marker.end + '</p><h4>Description</h4><p>' + marker.description + '</p></div>';
+    '<div id="iw-container">' +
+  '<div class="iw-title">' + marker.title+ '</div>' +
+  '<div class="iw-content">' +
+    '<div class="iw-subTitle"> Start Date </div>' +
+    '<p>' + marker.start + '</p>' +
+    '<div class="iw-subTitle">Contacts</div>' +
+    '<p>VISTA ALEGRE ATLANTIS, SA<br>3830-292 Ílhavo - Portugal<br>'+
+    '<br>Phone. +351 234 320 600<br>e-mail: geral@vaa.pt<br>www: www.myvistaalegre.com</p>'+
+  '</div>' +
+  '<div class="iw-bottom-gradient"></div>' +
+'</div>',
+
+    maxWidth: 350
+
     var infoWindow = new google.maps.InfoWindow({
       content: infoWindowContent
     });
@@ -107,11 +121,13 @@ export class DashboardPage {
     
   }
 
+  
   closeAllInfoWindows() {
     for(let window of this.infoWindows) {
       window.close();
     }
   }
+  
 
   openModal(){
     this.navCtrl.push(ModalPage);
@@ -120,4 +136,3 @@ export class DashboardPage {
 }
 
 
-  
