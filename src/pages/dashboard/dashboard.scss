@@ -44,8 +44,7 @@ page-dashboard {
         font-size: 22px;
         font-weight: 400;
         padding: 10px;
-        background-color: #48b5e9;
-        color: white;
+        color: #404040;
         margin: 0;
         border-radius: 2px 2px 0 0;
     }
@@ -58,6 +57,7 @@ page-dashboard {
         max-height: 140px;
         overflow-y: auto;
         overflow-x: hidden;
+        color: #404040;
     }
     .iw-content img {
         float: right;
@@ -67,6 +67,11 @@ page-dashboard {
         font-size: 16px;
         font-weight: 700;
         padding: 5px 0;
+        color: #404040;
+    }
+    .description {
+        padding: 5px;
+        width: 100%;
     }
     .iw-bottom-gradient {
         position: absolute;

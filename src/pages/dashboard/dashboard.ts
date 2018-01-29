@@ -100,9 +100,13 @@ export class DashboardPage {
   '<div class="iw-content">' +
     '<div class="iw-subTitle"> Start Date </div>' +
     '<p>' + marker.start + '</p>' +
-    '<div class="iw-subTitle">Contacts</div>' +
-    '<p>VISTA ALEGRE ATLANTIS, SA<br>3830-292 Ílhavo - Portugal<br>'+
-    '<br>Phone. +351 234 320 600<br>e-mail: geral@vaa.pt<br>www: www.myvistaalegre.com</p>'+
+    '<div class="iw-subTitle">End Date</div>' +
+    '<p>' + marker.end + '</p>'+
+    '<div class="iw-subTitle">Description</div>' +
+    '<p class="description">' + marker.description + '</p>'+
+    '<div class="options">' +
+    '<div (click)="openJobDescription();" class="check"><p></p></div>' +
+    '</div>' + 
   '</div>' +
   '<div class="iw-bottom-gradient"></div>' +
 '</div>',
