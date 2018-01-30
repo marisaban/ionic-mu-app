@@ -132,7 +132,7 @@ export class DashboardPage {
  
           this.enableMap();
         }
-      }, 2000);
+      }, 1000);
  
     };
  

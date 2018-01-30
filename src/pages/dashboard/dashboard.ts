@@ -22,6 +22,10 @@ export class DashboardPage {
   apiKey: any;
  
   constructor(public nav: NavController, public geolocation: Geolocation, public connectivityService: ConnectivityService) {
+   
+  }
+
+  ionViewWillEnter() {
     this.loadGoogleMaps();
   }
  
@@ -123,7 +127,7 @@ export class DashboardPage {
  
           this.enableMap();
         }
-      }, 2000);
+      }, 1000);
  
     };
  
