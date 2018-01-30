@@ -36,6 +36,9 @@ import { ItemApi } from '../providers/item-api';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ConnectivityProvider } from '../providers/connectivity/connectivity';
+import { GoogleMapsProvider } from '../providers/google-maps/google-maps';
+import { LocationsProvider } from '../providers/locations/locations';
 
 
 @NgModule({
@@ -90,7 +93,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     Facebook,
     Geolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthServiceProvider
+    AuthServiceProvider,
+    ConnectivityProvider,
+    GoogleMapsProvider,
+    LocationsProvider
   ]
 })
 export class AppModule {}
