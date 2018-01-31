@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-
 import { LogHoursPage } from '../log-hours/log-hours';
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/map'
 
 
 
@@ -10,6 +11,8 @@ import { LogHoursPage } from '../log-hours/log-hours';
   templateUrl: 'work-logs.html'
 })
 export class WorkPage {
+  jobitems: Array<{title: string}>;
+  posts: any;
 
   logHoursPage = LogHoursPage;
   months: any = [];
@@ -17,7 +20,8 @@ export class WorkPage {
   items: any = [];
   itemExpandHeight: number = 100;
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public http: Http) {
+
     this.items = [
       { expanded: false },
       { expanded: false },
